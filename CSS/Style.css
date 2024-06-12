@@ -820,16 +820,32 @@
 
 .titulo, .Drip_logo_TemaC, .bentoXx1, .tema {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .bentoXx1::first-letter, .tema::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -1209,16 +1225,32 @@
 
 .titulo, .Drip_logo_TemaC, .bentoXx1, .tema {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .bentoXx1::first-letter, .tema::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -2508,16 +2540,32 @@
 
 .titulo, .Drip_logo_TemaC, .bentoXx1, .tema {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .bentoXx1::first-letter, .tema::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -2980,16 +3028,32 @@
 
 .titulo, .Drip_logo_TemaC, .bentoXx1, .tema {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .bentoXx1::first-letter, .tema::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -3369,16 +3433,32 @@
 
 .titulo, .Drip_logo_TemaC, .bentoXx1, .tema {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .bentoXx1::first-letter, .tema::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -4262,6 +4342,10 @@
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
 }
 
+.img_shadowDark {
+  filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.7));
+}
+
 .overlay img {
   -o-object-fit: contain;
      object-fit: contain;
@@ -4313,6 +4397,10 @@
 
 .inner_carousel_md {
   display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.transicion {
   transition: transform 0.7s ease-in-out;
 }
 
@@ -4456,7 +4544,7 @@
 
 .Img_Size_sm {
   height: auto;
-  width: 40vh;
+  width: 20vh;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -6766,16 +6854,32 @@
 
 .titulo, .Drip_logo_TemaC, .bentoXx1, .tema {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .bentoXx1::first-letter, .tema::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -7155,16 +7259,32 @@
 
 .titulo, .Drip_logo_TemaC, .bentoXx1, .tema {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .bentoXx1::first-letter, .tema::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -8342,7 +8462,7 @@ input[type=radio]:checked:after {
   align-items: center;
   justify-content: center;
   border: 10px solid #7a0619;
-  width: 85%;
+  width: 90%;
   height: 85vh;
   margin: auto;
   margin-top: 2%;
@@ -8350,27 +8470,97 @@ input[type=radio]:checked:after {
   border-radius: 10px;
 }
 
+/* Define la animación fuera de las reglas de estilo */
+@keyframes grow-left-to-right {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+/* Estilos para el div .Pokedex_Screen */
 .Pokedex_Screen {
   display: flex;
-  width: 90%;
+  flex-direction: column;
+  width: 95%;
   height: 95%;
-  background-color: whitesmoke;
+  background-color: rgb(226, 226, 226);
   border-radius: 10px;
   -o-object-fit: contain;
      object-fit: contain;
   padding: 5px;
+  /* Aplica la animación */
+  animation: grow-left-to-right 0.5s ease-in-out;
 }
 
 .Pokedex_rest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
   height: 100%;
   background-image: url("/IMG/Pokeball_minimalista.png");
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
+  animation: slide-up 1s ease-in-out;
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    /* Empieza desde abajo */
+  }
+  to {
+    transform: translateY(0);
+    /* Llega hasta arriba */
+  }
 }
 
-.Pokedex_List, .Pokedex_infoCard, .Pokedex_Stats, .Pokedex_Moves {
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    /* Empieza desde abajo */
+  }
+  to {
+    transform: translateY(0);
+    /* Llega hasta arriba */
+  }
+}
+
+.Pokedex_infoCard {
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+  width: 30%;
+  align-self: flex-end;
+  align-items: center;
+  background-color: rgb(221, 221, 221);
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.Pokedex_Stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30%;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.Pokedex_GeneralStats, .Pokedex_Evo {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color: rgb(221, 221, 221);
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.Pokedex_List, .Pokedex_Moves {
   display: flex;
   width: 30%;
   height: 100%;
@@ -9182,16 +9372,32 @@ header a {
 
 .titulo, .Drip_logo_TemaC, .tema, .bentoXx1 {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .Drip_logo_TemaC::first-letter, .tema::first-letter, .bentoXx1::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -10263,16 +10469,32 @@ header a {
 
 .titulo, .tema, .bentoXx1, .Drip_logo_TemaC {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .tema::first-letter, .bentoXx1::first-letter, .Drip_logo_TemaC::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -10652,16 +10874,32 @@ header a {
 
 .titulo, .tema, .bentoXx1, .Drip_logo_TemaC {
   text-shadow: 3px 3px rgb(112, 11, 151);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bolder;
   font-style: italic;
   font-family: "Lato";
+  color: white;
 }
 .titulo::first-letter, .tema::first-letter, .bentoXx1::first-letter, .Drip_logo_TemaC::first-letter {
   color: rgb(142, 5, 194);
   margin-right: 10px;
-  text-shadow: 2px 4px white;
-  font-size: 40px;
+  text-shadow: 2px 4px rgb(112, 11, 151);
+  font-size: 60px;
+  font-family: "Lato";
+}
+
+.tituloThB {
+  text-shadow: 3px 3px rgb(255, 0, 0);
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Poppins";
+}
+.tituloThB::first-letter {
+  color: rgb(149, 1, 1);
+  margin-right: 10px;
+  text-shadow: 2px 4px rgb(124, 124, 124);
+  font-size: 60px;
 }
 
 .tema {
@@ -11545,6 +11783,10 @@ header a {
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
 }
 
+.img_shadowDark {
+  filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.7));
+}
+
 .overlay img {
   -o-object-fit: contain;
      object-fit: contain;
@@ -11596,6 +11838,10 @@ header a {
 
 .inner_carousel_md {
   display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.transicion {
   transition: transform 0.7s ease-in-out;
 }
 
@@ -11739,7 +11985,7 @@ header a {
 
 .Img_Size_sm {
   height: auto;
-  width: 40vh;
+  width: 20vh;
   -o-object-fit: contain;
      object-fit: contain;
 }

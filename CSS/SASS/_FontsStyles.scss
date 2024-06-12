@@ -226,16 +226,34 @@ $FontPack4: ('Titulo': 'Roboto', 'Tema': 'Montserrat', 'Texto': 'Open Sans');
 
 .titulo {
     text-shadow: 3px 3px $color-secundario;
-    font-size: map-get($map: $FontSize, $key: "grande");
+    font-size: map-get($map: $FontSize, $key: "Xgrande");
     font-weight: bolder;
     font-style: italic;
     font-family: map-get($map: $FontPack1, $key:Titulo);
+    color: white;
 
     &::first-letter {
         color: $color-primario;
         margin-right: 10px;
-        text-shadow: 2px 4px white;
-        font-size: 40px;
+        text-shadow: 2px 4px $color-secundario;
+        font-size: 60px;
+        font-family: map-get($map: $FontPack1, $key:Titulo);
+
+    }
+}
+
+.tituloThB {
+    text-shadow: 3px 3px $color-primarioB;
+    font-size: map-get($map: $FontSize, $key: "Xgrande");
+    font-weight: bolder;
+    font-style: italic;
+    font-family: map-get($map: $FontPack3, $key:Titulo);
+
+    &::first-letter {
+        color: $color-secundarioB;
+        margin-right: 10px;
+        text-shadow: 2px 4px rgb(124, 124, 124);
+        font-size: 60px;
     }
 }
 
