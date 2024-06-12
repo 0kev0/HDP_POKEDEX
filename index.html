@@ -36,7 +36,7 @@
         <div class="triangulo" id="cerrar_again"></div>
       </div>
       <div class="Pokedex_Screen">
-        <div class="Pokedex_List">Lista de pokemones</div>
+        <div class="Pokedex_List flex-column -center" style="overflow: scroll;" id="pokedex_list"></div>
         <div class="Pokedex_rest"></div>
         <!-- <div class="Pokedex_infoCard">Tarjeta info</div>
         <div class="Pokedex_Stats">estadisticas</div>
@@ -106,6 +106,7 @@
     src="https://kit.fontawesome.com/66ad0f1cd6.js"
     crossorigin="anonymous"
   ></script>
+  <script src="pokemons.js"></script>
   <script>
     const btn = document.getElementById('abrir_folder');
       const ocultar = document.getElementById('ocultar');

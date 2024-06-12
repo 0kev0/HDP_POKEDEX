@@ -2389,6 +2389,34 @@
   background: linear-gradient(135deg, #2980b9, #2c3e50);
 }
 
+.pokemon-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 100%;
+  height: 0px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+}
+.pokemon-card p {
+  font-size: 12px;
+}
+.pokemon-card h2 {
+  font-size: 14px;
+}
+.pokemon-card img {
+  max-width: 60px;
+}
+
 /*Paleta de colores A*/
 /*Paleta de colores B*/
 /*Paleta de colores C*/
@@ -8804,7 +8832,7 @@ input[type=radio]:checked:after {
 
 .Pokedex_List, .Pokedex_infoCard, .Pokedex_Stats, .Pokedex_Moves {
   display: flex;
-  width: 30%;
+  width: 900px;
   height: 100%;
   background-color: rgb(221, 221, 221);
   border-radius: 10px;
