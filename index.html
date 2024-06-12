@@ -18,7 +18,6 @@
 
     <title>POKEDEX</title>
   </head>
-
   <body>
     <nav class="nav2 navbar-responsive">
       <a class="logo" title="Pokedex Icon"
@@ -32,9 +31,9 @@
       </ul>
     </nav>
 
-    <div class="Pokedex_UnFolded">
+    <div class="Pokedex_UnFolded" id="abrir_folder">
       <div class="Pokedex_Folded_Center">
-        <div class="triangulo"></div>
+        <div class="triangulo" id="cerrar_again"></div>
       </div>
       <div class="Pokedex_Screen">
         <div class="Pokedex_List">Lista de pokemones</div>
@@ -45,9 +44,9 @@
       </div>
     </div>
 
-    <div class="Pokedex_Folded">
+    <div class="Pokedex_Folded" id="ocultar">
       <div class="Pokedex_Folded_top">
-        <div class="lente"></div>
+        <div class="lente" id="cerrar"></div>
         <div class="Dot_Rojo"></div>
         <div class="Dot_Verde"></div>
         <div class="Dot_Amarillo"></div>
@@ -107,4 +106,27 @@
     src="https://kit.fontawesome.com/66ad0f1cd6.js"
     crossorigin="anonymous"
   ></script>
+  <script>
+    const btn = document.getElementById('abrir_folder');
+      const ocultar = document.getElementById('ocultar');
+      const ocultar2 = document.getElementById('cerrar_again');
+      btn.classList.add('hidden');
+
+      const abrir = document.getElementById('cerrar');
+      abrir.addEventListener('click', function(e) {
+        ocultar.style.transition = 'opacity 0.5s ease, visibility 0.5s ease';
+        btn.style.transition = 'opacity 0.5s ease, visibility 0.5s ease';
+
+        ocultar.classList.add('hidden');
+        btn.classList.remove('hidden');
+        ocultar2.style.display = 'block'; // Match this duration with the CSS transition time
+      });
+
+      ocultar2.addEventListener('click', function(e) {
+
+        ocultar.classList.remove('hidden');
+        btn.classList.add('hidden');
+        ocultar2.style.display = 'none';
+      });
+  </script>
 </html>

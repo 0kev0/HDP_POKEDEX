@@ -95,3 +95,20 @@ $bd-violet-rgb: 88,
 $bd-pink-rgb: 255,
 55,
 95;
+
+$transition-duration: 0.5s;
+$transition-timing: ease;
+
+#abrir_folder, #ocultar {
+  transition: opacity $transition-duration $transition-timing, visibility $transition-duration $transition-timing;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
