@@ -1,0 +1,59 @@
+@import 'Variables';
+
+.article-col_1 {
+    margin: 0 15%;
+    align-items: center;
+}
+
+
+.article-col_2 {
+    column-count: 2;
+    margin: 20px 40px;
+
+}
+
+.article-col_3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.txt-subrayadoTemaA_block {
+    background-color: $color-primario;
+    display: block;
+}
+
+.txt-subrayadoTemaA_inline {
+    background-color: $color-primario;
+    display: inline !important;
+}
+
+.txt-subrayado {
+    background-color: $color-primarioB;
+}
+
+.txt-subrayadoB {
+    background-color: $color-primarioB;
+}
+
+.txt-subrayadoC {
+    background-color: $color-primarioC;
+}
+
+.txt-subrayadoD {
+    background-color: $color-primarioD;
+}
+
+.txt-subrayado_block {
+    background-color: $color-primarioB;
+    display: block;
+}
+
+.txt-subrayado_inlineD {
+    background-color: $colorBg-secundarioD;
+    display: inline;
+}
+
+.article-bordered {
+    border: 1px solid black;
+}

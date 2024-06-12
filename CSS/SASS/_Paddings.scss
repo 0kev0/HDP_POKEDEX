@@ -1,0 +1,26 @@
+@import 'Variables';
+
+
+@function padding-size($size) {
+    @if map-has-key($PaddingSizes, $size) {
+      @return map-get($PaddingSizes, $size);
+    } @else {
+      @error "El tamaño de padding #{$size} no está definido en las variables.";
+      @return null;
+    }
+  }
+  
+  @mixin padding($padding) {
+    $padding-value: padding-size($padding);
+    @if $padding-value {
+      padding: $padding-value;
+    }
+  }
+  
+  // Generar clases de paddings
+  @each $name, $value in $PaddingSizes {
+    .padding-#{$name} {
+      @include padding($name);
+    }
+  }
+  

@@ -1,0 +1,100 @@
+@import 'Variables';
+
+.text-shadow-bottom {
+    text-shadow: 2px 2px 6px lighten($color: $FontColorBase, $amount: 10);
+}
+
+
+.shadow-bottom {
+    box-shadow: 00px 10px 00px 0px white;
+}
+
+.shadow-bottom_sm {
+    box-shadow: 00px 2px 10px 0px white;
+}
+
+.shadow-left {
+    box-shadow: -5px 5px 0px 0px white;
+}
+
+.shadow-top {
+    box-shadow: 0px -10px 0px 0px white;
+}
+
+.shadow-right {
+    box-shadow: 10px 0px 0px 0px white;
+}
+
+.shadow-small {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-medium {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-large {
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-up {
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-down {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-left {
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-right {
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+}
+
+@mixin shadow-difum_imputs($color) {
+    box-shadow: 0px 3px 1px 0px $color;
+}
+@mixin shadow-difum_txt($color) {
+   text-shadow: 4px 4px 1px 0px $color !important;
+}
+
+@mixin shadow-difum_Forms($color) {
+    box-shadow: 0px 0px 5px 1px $color;
+}
+
+.shadow-difum_Forms {
+    &:hover {
+        transition: .15s all ease-in-out;
+        @include shadow-difum_Forms($color-primario);
+    }
+
+}
+
+@mixin shadow-difum_color ($color) {
+    box-shadow: 0px 0px 10px 2px $color;
+}
+
+@mixin shadow-BoxBlur {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+@mixin Hover_shadow-difum_imput {
+    box-shadow: 0px 2px 0px 0px $color-primarioB;
+}
+
+@mixin shadow-bottom_imput {
+    box-shadow: 0px 2px 0px 0px lighten($color: $color-primarioB, $amount: 25);
+}
+
+@mixin shadow-bottom_imput_color ($color) {
+    box-shadow: 0px 2px 0px 0px lighten($color: $color, $amount: 25);
+}
+
+@mixin shadow-linael-bottom_imput_color ($color) {
+    box-shadow: 0px 1px 0px 0px $color;
+}

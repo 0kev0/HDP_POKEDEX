@@ -1,0 +1,166 @@
+@import 'Variables';
+@import 'FontsStyles';
+@import 'Utilitdades';
+
+
+.container-img_fluid_set {
+    height: 80vh;
+    width: 100%;
+
+}
+
+.Txt_overImg {}
+
+.container-regular {
+    height: 60vh;
+}
+
+.container-fluid {
+    margin-top: 10vh;
+    height: 80vh;
+}
+
+.container-full-width {
+    padding: 2%;
+    margin-bottom: 2%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 100vh;
+}
+
+.container-regular {
+    border: 1px solid $colorBg-secundario;
+    box-shadow: 0 0.5% 1% rgba(0, 0, 0, 0.1);
+    background-color: $GrayRdBg;
+
+    p {
+        color: $colorForm-primario;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+.container-full-width {
+    background-color: $colorbg-primarioC;
+    border: 1px solid $colorBg-secundarioC;
+}
+
+.container-regular:hover,
+.container-fluid:hover,
+.container-full-width:hover {
+    box-shadow: 0 1% 2% rgba(0, 0, 0, 0.2);
+}
+
+.container-regular h2,
+.container-fluid h2,
+.container-full-width h2 {
+    margin-top: 0;
+    font-size: 2.4vw;
+}
+
+.container-regular p,
+.container-fluid p,
+.container-full-width p {
+    font-size: 1.6vw;
+    color: $color-secundario;
+    line-height: 1.5;
+}
+
+@import 'Variables';
+
+.info-container {
+    border: 1px solid $color-secundario;
+    //background-color: $colorBg-secundario;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.info-container h2 {
+    color: $color-secundario;
+}
+
+.info-container-content {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    h3 {
+        color: $color-secundario;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h3 {
+        font-size: 15px
+    }
+}
+
+/*prefabs para la documentacion*/
+.Documentacion-seccion {
+    @include shadow-linael-bottom_imput_color (white);
+    margin-bottom: 4px;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+.Titulo_special {
+    margin-top: 10px;
+    font-family: map-get($map: $FontPack1, $key: Titulo);
+    text-shadow: -5px 0px $color-secundario;
+    display: block;
+    height: auto;
+    color: $FontColorBase;
+    font-size: map-get($map: $FontSize, $key: grande);
+    font-weight: bold;
+
+    &::first-letter {
+        font-size: map-get($map: $FontSize, $key: Xgrande);
+    }
+}
+
+.Documentacion-container {
+    background-color: $colorbg-primario;
+    padding: 20px;
+
+
+    h2 {
+        font-family: map-get($map: $FontPack1, $key: Tema);
+        font-size: map-get($map: $FontSize, $key: grande)+5px;
+        display: block;
+        height: auto;
+        color: $FontColorBase;
+        font-weight: bold;
+    }
+}
+
+.Documentacion-info-container-content {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    height: auto;
+    width: 90%;
+    background-color: lighten($color: $colorbg-primario, $amount: 10);
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    object-fit: contain;
+
+    h3 {
+        font-family: map-get($map: $FontPack1, $key: Titulo);
+        color: $FontColorBase;
+    }
+
+    p {
+        font-family: map-get($map: $FontPack2, $key: Texto);
+    }
+
+    pre
+    {
+        justify-items: flex-start;
+    }
+}

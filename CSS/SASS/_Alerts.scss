@@ -1,0 +1,108 @@
+@import 'Variables';
+// Estilos base para todas las alertas
+
+.alert {
+  padding: 10px 15px;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 10px;
+  z-index: 9999;
+  opacity: 0.9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {// Levanta la alerta al hacer hover
+    opacity: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px); 
+  }
+
+  &.closeable {
+    padding-right: 40px;
+  }
+
+  .close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+}
+
+@mixin borderSolid($colorbg,$colorBorder,$Size,$txt_color) {
+  background-color: $alert-success-bg;
+  border: Size solid $colorBorder;
+  color: $txt_color;
+}
+// Estilos para la alerta de éxito
+.alert-success  {
+  @extend .alert;
+  @include borderSolid($alert-success-bg, $alert-success-border ,  1px,$alert-success-text );
+  background-color: $alert-success-bg;
+  border: 1px solid $alert-success-border;
+  color: $alert-success-text;
+}
+
+// Estilos para la alerta de error
+.alert-error {
+  @extend .alert;
+  background-color: $alert-error-bg;
+  border: 1px solid $alert-error-border;
+  color: $alert-error-text;
+  
+}
+
+// Estilos para la alerta de advertencia
+.alert-warning {
+  @extend .alert;
+  background-color: $alert-warning-bg;
+  border: 1px solid $alert-warning-border;
+  color: $alert-warning-text;
+}
+
+// Estilos para la alerta de información
+.alert-info {
+  @extend .alert;
+  background-color: $alert-info-bg;
+  border: 1px solid $alert-info-border;
+  color: $alert-info-text;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+// Aplicar animación de movimiento a las alertas
+.alert.slide-in-right {
+  animation: slideInRight 0.5s forwards;
+}
+
+.alert.slide-out-right {
+  animation: slideOutRight 0.5s forwards;
+}

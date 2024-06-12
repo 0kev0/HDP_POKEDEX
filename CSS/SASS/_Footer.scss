@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Pie de Página */
+.pie-pagina {
+    width: 100%;
+    background-color: #0a141d;
+
+    .grupo-1 {
+
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        padding: 45px 0px;
+
+        .Fother-box {
+            figure {
+                width: 50%;
+                height: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 150px;
+                }
+            }
+
+            h2 {
+                color: #fff;
+                margin-bottom: 25px;
+                font-size: 20px;
+            }
+
+            p {
+                color: #efefef;
+                margin-bottom: 10px;
+            }
+        }
+
+        .red-social {
+            a {
+                display: inline-block;
+                text-decoration: none;
+                width: 45px;
+                height: 45px;
+                line-height: 45px;
+                color: #fff;
+                margin-right: 10px;
+                background-color: #0d2033;
+                text-align: center;
+                transition: all 300ms ease;
+            }
+
+            #fb {
+                &:hover {
+                    background: #0051ff;
+                }
+            }
+
+            #tw {
+                &:hover {
+                    background: #0099ff;
+                }
+            }
+
+            #yt {
+                &:hover {
+                    background: #ff0800;
+                }
+            }
+
+            #ig {
+                &:hover {
+                    background: radial-gradient(at right top, #bc2a8d, #e95950, #fccc63);
+                }
+            }
+        }
+
+    }
+
+    .grupo-2 {
+        background-color: #0a1a2a;
+        padding: 15px 10px;
+        text-align: center;
+        color: #fff;
+
+        small {
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .grupo-1 {
+            width: 90%;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 30px;
+            padding: 35px 0px;
+        }
+    }
+}
+
+/*foter 2*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container-F {
+        max-width: 1170px;
+        margin: auto;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 70px 0;
+
+            .footer-col {
+                width: 25%;
+                padding: 0 15px;
+
+                h4 {
+                    font-size: 18px;
+                    color: #ffffff;
+                    text-transform: capitalize;
+                    margin-bottom: 35px;
+                    font-weight: 500;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -10px;
+                        background-color: #e91e63;
+                        height: 2px;
+                        box-sizing: border-box;
+                        width: 50px;
+                    }
+                }
+
+                ul li:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                ul li a {
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: 300;
+                    color: #bbbbbb;
+                    display: block;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        color: #ffffff;
+                        padding-left: 8px;
+                    }
+                }
+
+                .social-links a {
+                    display: inline-block;
+                    height: 40px;
+                    width: 40px;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    margin: 0 10px 10px 0;
+                    text-align: center;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    color: #ffffff;
+                    transition: all 0.5s ease;
+
+                    &:hover {
+                        color: #24262b;
+                        background-color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+        .footer .footer-col {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 574px) {
+        .footer .footer-col {
+            width: 100%;
+        }
+    }
+}

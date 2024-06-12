@@ -1,0 +1,365 @@
+@import 'Variables';
+@import 'Shadow';
+
+
+// Grupo 1
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// Grupo 2
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+// Grupo 3
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+// Grupo 4
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(path/to/file) format('Example: truetype or opentype depending on the file extension of your font');
+}
+
+// Grupo 1
+@font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap') format('woff2');
+}
+
+// Grupo 2
+@font-face {
+    font-family: 'Lato';
+    src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('https://fonts.googleapis.com/css2?family=Raleway&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap') format('woff2');
+}
+
+// Grupo 3
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('https://fonts.googleapis.com/css2?family=Nunito&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap') format('woff2');
+}
+
+// Grupo 4
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('https://fonts.googleapis.com/css2?family=Oswald&display=swap') format('woff2');
+}
+
+$FontPack3: ('Titulo': 'Poppins', 'Tema': 'Nunito', 'Texto': 'Quicksand');
+$FontPack1: ('Titulo': 'Lato', 'Tema': 'Raleway', 'Texto': 'Source Sans Pro');
+$FontPack2: ('Titulo': 'Playfair Display', 'Tema': 'Merriweather', 'Texto': 'Oswald');
+$FontPack4: ('Titulo': 'Roboto', 'Tema': 'Montserrat', 'Texto': 'Open Sans');
+
+.txt_colorDsecond {
+    color: $color-secundarioD;
+}
+
+.txt_colorWhite {
+    color: white;
+}
+
+.txt_colorPrimaryD {
+    color: $color-primario;
+}
+
+.txt_colorWhite {
+    color: white;
+}
+
+.txt_bold {
+    font-weight: bold !important;
+}
+
+.txt-weight_Xsm {
+    font-weight: 200;
+}
+
+.txt-weight_sm {
+    font-weight: 400;
+}
+
+.txt-weight_md {
+    font-weight: 600;
+}
+
+.txt-weight_gr {
+    font-weight: 800;
+}
+
+.txt-weight_Xgr {
+    font-weight: 900;
+}
+
+
+
+
+.Inicial_Resaltada_h1 {
+    &::first-letter {
+        font-size: 150%;
+        font-style: italic;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+}
+
+.Inicial_Resaltada_h2 {
+    &::first-letter {
+        font-size: 150%;
+        font-style: italic;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+}
+
+.Inicial_Resaltada_h1_dashed {
+    &::first-letter {
+        font-size: 130%;
+        font-style: italic;
+        text-decoration: underline;
+        font-weight: 500;
+        margin-right: 0px;
+    }
+}
+
+
+
+.Titulo1 {
+    font-family: map-get($map: $FontPack1, $key: 'Titulo');
+}
+
+.Tema1 {
+    font-family: map-get($map: $FontPack1, $key: 'Tema');
+}
+
+.contenido1 {
+    font-family: map-get($map: $FontPack1, $key: 'Texto');
+}
+
+.Titulo2 {
+    font-family: map-get($map: $FontPack2, $key: 'Titulo');
+}
+
+.Tema2 {
+    font-family: map-get($map: $FontPack2, $key: 'Tema');
+}
+
+.contenido2 {
+    font-family: map-get($map: $FontPack2, $key: 'Texto');
+}
+
+.Titulo3 {
+    font-family: map-get($map: $FontPack3, $key: 'Titulo');
+}
+
+.Tema3 {
+    font-family: map-get($map: $FontPack3, $key: 'Tema');
+}
+
+.contenido3 {
+    font-family: map-get($map: $FontPack3, $key: 'Texto');
+}
+
+.Font-base {
+    color: $color-primario;
+}
+
+.letter-Gradient {
+    background-image: linear-gradient(to right, $color-primarioC, white);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.texto-sombra {
+    @extend .text-shadow-bottom;
+}
+
+.texto-shadow-box {
+    box-shadow: -10px 0 0 $color-secundario;
+}
+
+
+.titulo {
+    text-shadow: 3px 3px $color-secundario;
+    font-size: map-get($map: $FontSize, $key: "grande");
+    font-weight: bolder;
+    font-style: italic;
+    font-family: map-get($map: $FontPack1, $key:Titulo);
+
+    &::first-letter {
+        color: $color-primario;
+        margin-right: 10px;
+        text-shadow: 2px 4px white;
+        font-size: 40px;
+    }
+}
+
+.tema {
+    @extend .titulo;
+    font-size: map-get($map: $FontSize, $key: "grande");
+
+    &::first-letter {
+        color: $color-primario;
+        text-shadow: 2px 3px white;
+        font-size: 50px;
+    }
+}
+
+
+.temasm {
+    text-shadow: 1px 3px black;
+    font-size: map-get($map: $FontSize, $key: "pequeno");
+    font-weight: bolder;
+    font-style: italic;
+    font-family: map-get($map: $FontPack3, $key: Titulo);
+    align-self: self-start;
+
+    &::first-letter {
+        font-size: map-get($map: $FontSize, $key: "pequeno");
+    }
+}
+
+.contenido {
+    font-size: map-get($map: $FontSize, $key: "grande");
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-wrap: wrap;
+
+}
+
+.contenido-article {
+    small {
+        font-size: map-get($map: $FontSize, $key: "mediano");
+        font-weight: 200;
+        font-family: map-get($map: $FontPack1, $key: Texto);
+        text-wrap: wrap;
+        margin-left: 10%;
+        margin-right: 10%;
+        color: white;
+        text-align: center;
+
+        &::first-letter {
+            font-style: italic;
+            font-size: 22px;
+        }
+
+    }
+
+    font-size: map-get($map: $FontSize, $key: "mediano");
+    font-weight: 200;
+    font-family: map-get($map: $FontPack1, $key: Titulo);
+    text-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+
+    &::first-letter {
+        font-weight: bolder;
+        color: $color-secundario;
+        font-size: 40px;
+        text-shadow: rgb(255, 255, 255) 1px 0 2px;
+    }
+}
+
+.li-content {
+    font-size: map-get($map: $FontSize, $key: "pequeno");
+    font-weight: 100;
+    font-family: map-get($map: $FontPack1, $key: Titulo);
+    text-wrap: wrap;
+    margin-left: 3%;
+}
+
+.Font_Titulo {
+    display: block;
+    height: auto;
+    color: $FontColorBase;
+    @include shadow-difum_txt(white);
+    font-size: map-get($map: $FontSize, $key: Xgrande);
+    font-weight: bold;
+    padding-top: 10px;
+
+    @media screen and (max-width: 480px) {
+        h3 {
+            font-size: 14px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.Font_Tema {
+    display: block;
+    height: auto;
+    color: $FontColorBase;
+    font-size: map-get($map: $FontSize, $key: grande);
+    padding-top: 10px;
+}
+
+.Sub-Tema {
+    display: block;
+    height: auto;
+    color: $FontColorBase;
+    font-size: map-get($map: $FontSize, $key: mediano);
+    font-weight: bold;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+.coment {
+    display: inline;
+}
+
+.coment_green {
+    display: inline;
+    color: rgb(0, 179, 0);
+}
+
+.code {
+
+    color: rgb(0, 179, 0);
+}

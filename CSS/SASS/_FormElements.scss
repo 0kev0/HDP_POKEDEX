@@ -1,0 +1,436 @@
+@import 'Variables';
+@import 'FontsStyles';
+
+@mixin txarea_max_min_height {
+    height: 13vh;
+    max-height: 20vh;
+    min-height: 10vh;
+}
+
+.TituloForm {
+    font-family: map-get($map: $FontPack1, $key: Titulo);
+}
+
+.label_sm {
+    font-size: map-get($map: $FontSize, $key: "pequeno");
+    font-weight: 100;
+    font-family: map-get($map: $FontPack3, $key: Titulo);
+
+    &::first-letter {
+        font-size: map-get($map: $FontSize, $key: "mediano");
+    }
+
+    &:focus {
+        outline: none;
+        outline-color: red;
+    }
+}
+
+
+.input_Xsm {
+    width: map-get($map: $inputWithSizes, $key: "pequeno");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    align-self: self-start;
+    border-radius: 2px;
+    border: 1px white solid;
+    background-color: rgb(225, 225, 225);
+
+
+    &:hover {
+        @include shadow-difum_imputs($color-secundarioB);
+    }
+
+    ;
+
+    &:focus {
+        outline: none;
+        outline-color: red;
+    }
+
+    option:checked {
+        color: green;
+    }
+
+
+}
+
+.input_Xsm {
+    @extend .input_Xsm;
+    border-radius: none;
+
+    width: map-get($map: $inputWithSizes, $key: "Xpequeno");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    font-family: map-get($map: $FontPack2, $key: Titulo);
+    align-self: center;
+
+    &:focus {
+        outline: none;
+        outline-color: red;
+    }
+}
+
+.input_sm {
+    @extend .input_Xsm;
+
+    width: map-get($map: $inputWithSizes, $key: "pequeno");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    font-family: map-get($map: $FontPack2, $key: Titulo);
+    align-self: flex-start;
+    margin-left: 5%;
+
+    &:focus {
+        outline: none;
+        outline-color: red;
+    }
+}
+
+.input_md {
+    @extend .input_Xsm;
+    width: map-get($map: $inputWithSizes, $key: "mediano");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    align-self: flex-start;
+    margin-left: 10px;
+
+
+
+}
+
+.input_Gr {
+    @extend .input_Xsm;
+    width: map-get($map: $inputWithSizes, $key: "grande");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    margin-left: 5%;
+    align-self: flex-start;
+
+}
+
+
+.input_XGr {
+    @extend .input_Xsm;
+    width: map-get($map: $inputWithSizes, $key: "Xgrande");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    align-self: center;
+}
+
+.txtarea {
+    width: map-get($map: $inputWithSizes, $key: "Xgrande");
+    border: 2px gray solid;
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 10px;
+    @include txarea_max_min_height;
+
+}
+
+
+.TituloForm2 {
+    color: $GrayRdBg;
+    font-family: map-get($map: $FontPack2, $key: "Titulo");
+    text-decoration: underline;
+}
+
+
+.lable_sm2 {
+    font-family: map-get($map: $FontPack2, $key: "Oswald");
+    font-size: larger;
+    color: $color-primarioB;
+    align-self: self-start;
+    margin-left: 10px;
+
+    @media (max-width: 600px) {
+        font-size: medium;
+        padding: 10px;
+    }
+}
+
+
+.input_Xsm2 {
+    width: map-get($map: $inputWithSizes, $key: "pequeno");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    font-family: map-get($map: $FontPack2, $key: "Lato");
+
+    border-radius: 5px;
+    border: 3px white solid;
+    background-color: rgb(255, 255, 255);
+    @include shadow-bottom_imput;
+
+    &:hover {
+        @include shadow-difum_imputs($color-primario);
+    }
+
+    ;
+
+}
+
+.input_sm2 {
+    width: map-get($map: $inputWithSizes, $key: "grande");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    border: 3px white solid;
+    border-radius: map-get($map: $borders, $key: pequeno);
+    background-color: white;
+    align-self: flex-start;
+    margin-left: 5%;
+    @include shadow-bottom_imput;
+
+    &:hover {
+        @include shadow-difum_imputs(lighten($color: $color-primarioB, $amount: 25));
+    }
+
+    @media (max-width: 600px) {
+        width: 70%;
+    }
+}
+
+
+
+.input_md2 {
+    width: 90%;
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    border: transparent;
+    @include shadow-bottom_imput;
+
+    &:hover {
+        @include Hover_shadow-difum_imput;
+    }
+
+    &:focus {
+        outline: none;
+        @include Hover_shadow-difum_imput;
+    }
+
+    @media (max-width: 1000px) {
+        width: 80%;
+    }
+}
+
+.txtarea2 {
+    color: grey;
+    width: 90%;
+    border: transparent;
+    @include shadow-bottom_imput;
+    @include txarea_max_min_height;
+
+    &:hover {
+        @include Hover_shadow-difum_imput;
+    }
+
+    &:focus {
+        outline: none;
+        @include Hover_shadow-difum_imput;
+    }
+
+    @media (max-width: 800px) {
+        height: auto;
+        width: 70%;
+        background-color: red;
+
+    }
+
+    @media (max-width: 400px) {
+        width: 50%;
+        background-color: red;
+    }
+}
+
+.TituloForm3 {
+    font-family: map-get($map: $FontPack2, $key: "Oswald");
+    text-decoration: underline;
+}
+
+.lable_sm3 {
+    font-family: map-get($map: $FontPack2, $key: "Oswald");
+    font-size: larger;
+    color: $color-primarioB;
+    align-self: self-start;
+    margin-left: 10px;
+}
+
+.input_Xsm3 {
+    width: map-get($map: $inputWithSizes, $key: "pequeno");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    font-family: map-get($map: $FontPack2, $key: "Lato");
+
+    border-radius: 5px;
+    border: 3px white solid;
+    background-color: rgb(255, 255, 255);
+    @include shadow-bottom_imput;
+
+    &:hover {
+        @include shadow-difum_imputs($color-primario);
+    }
+
+    ;
+
+}
+
+.input_sm3 {
+    width: map-get($map: $inputWithSizes, $key: "grande");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    border: 3px white solid;
+    border-radius: 5px;
+    background-color: white;
+    @include shadow-bottom_imput;
+
+    &:hover {
+        @include shadow-difum_imputs($color-primario);
+    }
+}
+
+.input_md3 {
+    width: 90%;
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    border: transparent;
+    @include shadow-bottom_imput;
+
+    &:hover {
+        @include Hover_shadow-difum_imput;
+    }
+}
+
+.txtarea3 {
+    color: grey;
+    width: 90%;
+    border: transparent;
+    max-height: 20vh;
+    min-height: 10vh;
+
+    @include shadow-bottom_imput;
+    @include txarea_max_min_height;
+
+
+    &:hover {
+        @include Hover_shadow-difum_imput;
+    }
+}
+
+.TituloFormReserva {
+    font-family: map-get($map: $FontPack2, $key: Titulo);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: lighten($color: $colorBg-secundarioC, $amount: 20);
+}
+
+.label_smReserva {
+    font-size: map-get($map: $FontSize, $key: "mediano");
+    font-weight: 500;
+    font-family: map-get($map: $FontPack2, $key: Tema);
+    color: lighten($color: $colorBg-secundarioC, $amount: 20);
+    align-self: self-start;
+
+    &::first-letter {
+        font-size: map-get($map: $FontSize, $key: "mediano");
+        font-weight: bold;
+    }
+
+    &:focus {
+        outline: none;
+        outline-color: red;
+    }
+}
+
+.input_mdReserva {
+    @extend .input_md2;
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    background-color: white;
+    border: transparent;
+    @include shadow-bottom_imput_color(blue);
+
+    &:hover {
+        @include shadow-bottom_imput_color($colorBg-secundarioC);
+    }
+
+    &:focus {
+        outline: none;
+        @include shadow-bottom_imput_color($colorBg-secundarioC);
+    }
+}
+
+.input_smReserva {
+    @extend .input_mdReserva;
+    width: map-get($map: $inputWithSizes, $key: "pequeno");
+    height: map-get($map: $inputHeigtSizes, $key: "pequeno");
+    align-self: flex-start;
+    margin-left: 10px
+}
+
+//ESTILO BASE
+.rangeimput {
+    border-radius: map-get($map: $borders, $key: grande);
+    width: map-get($map: $RangeSizes, $key: mediano);
+    height: 8px;
+    cursor: grab;
+}
+
+.rangeimput_Gr {
+    @extend .rangeimput;
+    width: map-get($map: $RangeSizes, $key:grande);
+    accent-color: $color-primario;
+}
+
+.rangeimput_Md {
+    @extend .rangeimput;
+    width: map-get($map: $RangeSizes, $key: mediano);
+    accent-color: $colorBg-secundarioB;
+}
+
+.rangeimput_Sm {
+    @extend .rangeimput;
+    width: map-get($map: $RangeSizes, $key: pequeno);
+    accent-color: $color-primarioD;
+}
+
+
+legend {
+    color: $color-primarioB;
+}
+
+input[type='radio'] {
+    width: 25px;
+    height: 25px;
+}
+
+input[type='radio']:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: .01mm;
+    position: relative;
+    background-color: #3a3a3a;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    left: .6mm;
+    bottom: -.2mm;
+    position: relative;
+    background-color: $color-primarioB;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+
+
+
+
+
+.self-start {
+    margin-left: 5%;
+    align-self: flex-start;
+}
+
+.self-center {
+    margin: 0 5%;
+    align-self: center;
+}
+
+.self-right {
+    margin-right: 10px;
+    align-self: flex-end;
+}

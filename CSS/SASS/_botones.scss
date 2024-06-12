@@ -1,0 +1,677 @@
+@import 'Shadow';
+@import 'Variables';
+@import 'FontsStyles';
+@import 'Variables';
+@import 'FontsStyles';
+
+.buttontest {
+  display: inline-block;
+  height: map-get($map: $BtHeight, $key: pequeno);
+  width: auto;
+  margin: 2%;
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #FAFAFA;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid #FAFAFA;
+  background: $color-secundario;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+
+  &:hover {
+    transition: .45s all ease-out;
+    background: lighten($color: $color-secundario, $amount: 5);
+    transform: translate(1px, 1px);
+  }
+
+  &:active {
+    transition: .05s all ease-in;
+    box-shadow: none;
+    transform: translate(3px, 3px);
+    font-weight: bold;
+  }
+}
+
+
+.buttontest_Th2 {
+  @extend .buttontest;
+  background: $color-secundarioB;
+
+  &:hover {
+    background: lighten($color: $color-secundarioB, $amount: 5);
+  }
+}
+
+.buttontest_Th3 {
+  @extend .buttontest;
+  background: $color-secundarioC;
+
+  &:hover {
+    background: lighten($color: $color-secundarioC, $amount: 5);
+  }
+}
+
+.buttontest_Th4 {
+  @extend .buttontest;
+  background: $color-secundarioD;
+
+  &:hover {
+    background: lighten($color: $color-secundarioD, $amount: 5);
+  }
+}
+
+/*Buttons rounded*/
+.butontest_round {
+  margin: 2%;
+  display: inline-block;
+  height: map-get($map: $BtHeight, $key: pequeno);
+  width: auto;
+  font-family: map-get($map: $FontPack2, $key: Tema);
+  font-size: 1.5rem;
+  color: #FAFAFA;
+  line-height: 2px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: 2px solid #FAFAFA;
+  background: $color-secundario;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+
+  &:hover {
+    transition: .45s all ease-out;
+    background: lighten($color: $color-secundario, $amount: 5);
+    transform: translate(1px, 1px);
+  }
+
+  &:active {
+    transition: .05s all ease-in;
+    box-shadow: none;
+    transform: translate(3px, 3px);
+    font-weight: bold;
+  }
+}
+
+.butontest_round_Th2 {
+  @extend .butontest_round;
+
+  background: $color-secundarioB !important;
+
+  &:hover {
+    background: lighten($color: $color-primarioB, $amount: 5) !important;
+  }
+}
+
+.butontest_round_Th3 {
+  @extend .butontest_round;
+
+  background: $color-secundarioC !important;
+
+  &:hover {
+    background: lighten($color: $color-primarioC, $amount: 5) !important;
+  }
+}
+
+.butontest_round_Th4 {
+  @extend .butontest_round;
+
+  background: $color-secundarioD !important;
+
+  &:hover {
+    background: lighten($color: $color-primarioD, $amount: 5) !important;
+  }
+}
+
+
+
+/*butontest_boxshadow_Th*/
+
+.butontest_boxshadow_Th {
+  line-height: 2px;
+  margin: 5px;
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #FAFAFA;
+  text-transform: uppercase;
+  height: 5vh;
+  display: inline-block;
+  width: auto;
+  padding: 5px 10px;
+  border: 2px solid #FAFAFA;
+  background: $color-secundario;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+
+  &:hover {
+    transition: .45s all ease-out;
+    background: lighten($color: $color-secundario, $amount: 5);
+    transform: translate(1px, 1px);
+  }
+
+  &:active {
+    transition: .05s all ease-in;
+    box-shadow: none;
+    transform: translate(3px, 3px);
+    font-weight: bold;
+  }
+}
+
+.butontest_boxshadow_Th2 {
+  @extend .butontest_boxshadow_Th;
+  background: $color-secundarioB;
+
+  &:hover {
+    background: lighten($color: $color-primarioB, $amount: 5);
+  }
+}
+
+.butontest_boxshadow_Th3 {
+  @extend .butontest_boxshadow_Th;
+  background: $color-secundarioC;
+
+  &:hover {
+    background: lighten($color: $color-primarioC, $amount: 5);
+  }
+}
+
+.butontest_boxshadow_Th4 {
+  @extend .butontest_boxshadow_Th;
+  background: $color-secundarioD;
+
+  &:hover {
+    background: lighten($color: $color-primarioD, $amount: 5);
+  }
+}
+
+/*button_animated*/
+.button_animated_Th {
+  display: inline-block;
+  width: auto;
+  height: map-get($map: $BtHeight, $key: pequeno);
+  margin: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  line-height: 2px;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid $colorbg-primarioC;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: $colorbg-primario;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+
+  &:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: $color-primario;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+  }
+
+  &:hover:before,
+  &:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.9);
+
+  }
+}
+
+
+.button_animated_Th2 {
+  @extend .button_animated_Th;
+  color: $colorbg-primarioB;
+
+
+  &:before {
+    background-color: $color-primarioB;
+  }
+}
+
+.button_animated_Th3 {
+  @extend .button_animated_Th;
+  color: $colorbg-primarioC;
+
+  &:before {
+    background-color: $color-primarioC;
+  }
+}
+
+.button_animated_Th4 {
+  @extend .button_animated_Th;
+  color: $colorbg-primarioD;
+
+  &:before {
+    background-color: $color-primarioD;
+  }
+}
+
+/*button_Squear*/
+.button_Squear_Th {
+  @extend .buttontest;
+  border-radius: 0px;
+  border: 0px;
+  font-family: 'Quicksand';
+  background: darken($color: $color-primario, $amount: 5);
+  @include shadow-bottom_imput_color ($color-primario);
+  cursor: pointer;
+  margin: 30px 5px;
+  font-weight: 200;
+  display: inline-block;
+  height: map-get($map: $BtHeight, $key: pequeno);
+  width: auto;
+
+  &:hover {
+    transition: .45s all ease-out;
+    background: lighten($color: $color-primario, $amount: 5);
+    transform: translate(1px, 1px);
+    font-weight: 400;
+  }
+
+  &:active {
+    transition: .05s all ease-in;
+    box-shadow: none;
+    transform: translate(3px, 3px);
+    font-weight: bold;
+  }
+}
+
+
+.button_Squear_Th2 {
+  @extend .button_Squear_Th;
+  background: darken($color: $color-primarioB, $amount: 5);
+  @include shadow-bottom_imput_color ($color-primarioB);
+
+  &:hover {
+    background: lighten($color: $color-primarioB, $amount: 5);
+
+  }
+
+  @media screen and (max-width:900px) {
+    font-size: 14px;
+  }
+}
+
+
+
+
+.button_Squear_Th3 {
+  @extend .button_Squear_Th;
+  background: darken($color: $color-primarioC, $amount: 5);
+  @include shadow-bottom_imput_color ($color-primarioC);
+
+
+  &:hover {
+    background: lighten($color: $color-primarioC, $amount: 5);
+
+  }
+}
+
+.button_Squear_Th4 {
+  @extend .button_Squear_Th;
+  background: darken($color: $color-primarioD, $amount: 5);
+  @include shadow-bottom_imput_color ($color-primarioD);
+
+
+  &:hover {
+    background: lighten($color: $color-primarioD, $amount: 5);
+
+  }
+}
+
+
+
+
+$color-boton-defecto: #3498db;
+
+@mixin boton-estilos($color, $border-radius: 5px) {
+  padding: 10px 20px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: $color;
+  color: #fff;
+
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+
+.boton {
+  @include boton-estilos($color-boton-defecto);
+}
+
+@mixin centrar_txt_botones {
+  display: flex;
+  justify-content: center;
+}
+
+/*Tap Button*/
+.Tap_Button {
+  --button_radius: 0.75em;
+  padding: 0 10vh;
+  height: map-get($map: $BtHeight, $key: pequeno);
+  width: map-get($map: $BtWidth, $key: grande);
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  color: #FAFAFA;
+  @include shadow-bottom_imput_color(white);
+
+  .button_top {
+    box-sizing: border-box;
+    border: 2px solid var($color-primario);
+    border-radius: var(--button_radius);
+    padding: 0 10vh;
+    background: $color-primario;
+    color: $color-secundario;
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  }
+
+  &:hover {
+    transform: translateY(-0.33em);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  // Centrar el texto en botones
+  @include centrar_txt_botones;
+}
+
+
+.button_top_set-btn_colorTemaA {
+  @extend .Tap_Button;
+  background: $color-primario;
+
+  .button_top {
+
+    background: $color-primario;
+  }
+}
+
+.button_top_set-btn_colorTemaB {
+  @extend .Tap_Button;
+  background: $color-primarioB;
+
+  .button_top {
+
+    background: $color-primarioB;
+  }
+
+}
+
+.button_top_set-btn_colorTemaC {
+  @extend .Tap_Button;
+  background: $color-primarioC;
+
+  .button_top {
+
+    background: $color-primarioC;
+  }
+}
+
+.button_top_set-btn_colorTemaD {
+  @extend .Tap_Button;
+  background: $color-primarioD;
+
+  .button_top {
+
+    background: $color-primarioD;
+  }
+}
+
+
+.Tap_Button_Th2 {
+  @extend .Tap_Button;
+  background: $color-primarioB;
+
+}
+
+.Tap_Button_Th3 {
+  @extend .Tap_Button;
+  background: $color-primarioC;
+}
+
+.Tap_Button_Th4 {
+  @extend .Tap_Button;
+  background: $color-primarioD;
+
+}
+
+/*boton-primario_Th*/
+.boton-primario_Th {
+  @include boton-estilos($color-primario, 10px);
+  height: map-get($map: $BtHeight, $key:pequeno);
+  width: auto+5px;
+  display: inline-block;
+  border: 2px solid lighten($color: $color-primario, $amount: 20);
+
+  &:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .6), 0 0 10px rgba(0, 0, 0, .6);
+    border: none;
+    border-radius: 10px;
+    @include boton-estilos($color-secundario);
+    transition: 0.45s all ease-in;
+  }
+
+  &:after {
+    transition: 0.45s all ease-out;
+  }
+}
+
+.boton-primario_Th2 {
+  @extend .boton-primario_Th;
+  @include boton-estilos($color-primarioB, 10px);
+  border: 2px solid lighten($color: $color-primarioB, $amount: 20);
+
+
+  &:Hover {
+    @include boton-estilos($color-secundarioB);
+  }
+}
+
+.boton-primario_Th3 {
+  @extend .boton-primario_Th;
+  @include boton-estilos($color-primarioC, 10px);
+  border: 2px solid lighten($color: $color-primarioC, $amount: 20);
+
+  &:Hover {
+    @include boton-estilos($color-secundarioC);
+  }
+}
+
+.boton-primario_Th4 {
+  @extend .boton-primario_Th;
+  @include boton-estilos($color-primarioD, 10px);
+  border: 2px solid lighten($color: $color-primarioD, $amount: 20);
+
+  &:Hover {
+    @include boton-estilos($color-secundarioD);
+  }
+}
+
+/*.boton-secundario * editado sobre limo*/
+.boton-secundario_Th {
+  margin: 2%;
+  @include boton-estilos($color-primario, 20px);
+  height: map-get($map: $BtHeight, $key: pequeno);
+  width: map-get($map: $BtWidth, $key: mediano);
+  border: none;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
+
+  // Centrar el texto
+  @include centrar_txt_botones;
+
+}
+
+
+.boton-secundario_Th2 {
+  @extend .boton-secundario_Th;
+  @include boton-estilos($color-primarioB, 20px);
+}
+
+.boton-secundario_Th3 {
+  @extend .boton-secundario_Th;
+  @include boton-estilos($color-primarioC, 20px);
+
+}
+
+.boton-secundario_Th4 {
+  @extend .boton-secundario_Th;
+  @include boton-estilos($color-primarioD, 20px);
+
+}
+
+/*button 3*/
+.button-3 {
+  --b: 3px;
+  --s: .45em;
+  --color: White;
+
+  margin: 2%;
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: map-get($map: $FontSize, $key:Xpequeno);
+  width: auto;
+  display: inline-block;
+  height: 50px;
+  font-weight: 600;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:hover,
+  &:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+  }
+
+  &:active {
+    background: var(--color);
+    color: black;
+    font-weight: bolder;
+  }
+}
+
+.button-3_Th {
+  @extend .button-3;
+
+  &:hover,
+  &:focus-visible {
+    --_p: 0px;
+    outline-color: $color-primario;
+    outline-offset: .05em;
+  }
+
+  &:active {
+    background: $color-primario;
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+.button-3_Th2 {
+  @extend .button-3;
+
+  &:hover,
+  &:focus-visible {
+    --_p: 0px;
+    outline-color: $color-primarioB;
+    outline-offset: .05em;
+  }
+
+  &:active {
+    background: $color-primarioB;
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+.button-3_Th3 {
+  @extend .button-3;
+
+  &:hover,
+  &:focus-visible {
+    --_p: 0px;
+    outline-color: $color-primarioC;
+    outline-offset: .05em;
+  }
+
+  &:active {
+    background: $color-primarioC;
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+.button-3_Th4 {
+  @extend .button-3;
+
+  &:hover,
+  &:focus-visible {
+    --_p: 0px;
+    outline-color: $color-primarioD;
+    outline-offset: .05em;
+  }
+
+  &:active {
+    background: $color-primarioD;
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+
+
+.set_btnpequeno {
+  height: map-get($map: $BtHeight, $key: pequeno);
+  width: map-get($map: $BtWidth, $key: mediano);
+}
+
+.set_btn_mediano {
+  height: map-get($map: $BtHeight, $key: mediano);
+  width: map-get($map: $BtWidth, $key: grande);
+}
+
+.set_btn_grande {
+  height: map-get($map: $BtHeight, $key: mediano);
+  width: map-get($map: $BtWidth, $key: Xgrande);
+}

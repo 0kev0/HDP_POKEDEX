@@ -1,0 +1,92 @@
+@import 'Variables';
+
+.badge {
+    font-size: 1.4rem;
+    font-weight: 500;
+    position: relative;
+    padding: 4px 12px;
+    width: 200px;
+
+    &::before {
+        content: attr(data-badge);
+        font-size: 14px;
+        position: absolute;
+        left: 93%;
+        bottom: 70%;
+        background: #ffffff;  
+        padding: 4px 5px;
+        border-radius: 50%;
+    }
+}
+
+
+//mixmin
+@mixin badge1($color,$bgColor,$shadoColor) {
+    @extend .badge;
+    color: $color;
+    background: $bgColor;
+    border-radius: 5px;
+    box-shadow: 3px -20px 24px -10px $shadoColor;
+    &::before {
+        content: attr(data-badge);
+        font-size: 14px;
+        position: absolute;
+        left: 93%;
+        bottom: 70%;
+        background: #ffffff;
+        padding: 4px 5px;
+        border-radius: 50%;
+    }
+    
+  }
+  
+
+.badge1 {
+    @extend .badge;
+    @include badge1(rgb(117, 107, 91),burlywood,rgba(0, 0, 0, .75) );
+}
+
+.badge2 {
+    @extend .badge;
+    @include badge1(rgb(1, 191, 255),rgb(67, 0, 67),rgba(5, 93, 147, 0.747) );
+
+}
+
+.badge3 {
+    @extend .badge;
+    @include badge1( $colorbg-primarioC,$color-primarioC,$color-secundarioC );
+}
+
+.badge4 {
+    background-color: blue;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Cursive', sans-serif;
+    font-family: 'Cursive', sans-serif;
+}
+
+.badge5 {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Cursive', sans-serif;
+}
+
+.badge6 {
+
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Cursive', sans-serif;
+}
+
+.badgeCorinto {
+    @extend .badge;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, #d46c2b, #f8bb03);
+    border: 3px solid;
+    box-shadow: 0 0 20px rgba(0, 78, 33, 0.747);
+}

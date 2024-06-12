@@ -1,0 +1,225 @@
+@import "Variables";
+@import "Shadow";
+
+@mixin Display-flex {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@mixin Display-flex-row {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: auto;
+}
+
+@mixin boxmodelStandar {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 70vh;
+
+    @media (max-width: 1000px) {
+        max-width: 80%;
+    }
+}
+
+.form1 {
+    @include boxmodelStandar;
+    @include shadow-difum_Forms(white);
+    background: $GrayRdBg;
+    color: white;
+    gap: 8px;
+}
+
+.form1Test {
+    @include boxmodelStandar;
+    @include shadow-difum_Forms(white);
+    background: rgba(68, 68, 68, 0.5);
+    -webkit-backdrop-filter: blur(39px);
+    backdrop-filter: blur(39px);
+    border: 1px solid rgba(68, 68, 68, 0.25);
+
+    color: white;
+
+    gap: 8px;
+}
+
+.form2 {
+    @include shadow-difum_Forms(white);
+    @include boxmodelStandar;
+    background: $GrayRdBg;
+    width: 90vh;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "title title "
+        "info card"
+        "final final";
+    gap: 8px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 10px;
+    color: white;
+    /*@media (min-width: 768px) {
+        width: 70vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 2fr 0.5fr;
+        grid-template-areas:
+            "title title"
+            "info card"
+            "final final";
+    }*/
+}
+
+.title {
+    grid-area: title;
+}
+
+.informacion {
+    @include Display-flex;
+    gap: 8px;
+    width: 100%;
+    padding: 0;
+    grid-area: info;
+}
+
+.cardinfo {
+    @include Display-flex;
+    grid-area: card;
+    gap: 8px;
+    width: 100%;
+}
+
+.end {
+    grid-area: final;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.form3 {
+    @include boxmodelStandar();
+    border-radius: 5px;
+    height: 70%;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: white;
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        grid-template-columns: 1fr;
+    }
+}
+
+.form4 {
+    @include boxmodelStandar;
+    @include shadow-difum_color($color-primarioB);
+    @extend .form3;
+    width: 110vh;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 3fr 0.5fr;
+    grid-template-areas:
+        "title img "
+        "info img"
+        "final img";
+    gap: 8px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 0px;
+
+    @media (max-width: 1700px) {
+        max-width: 80%;
+    }
+
+    @media (max-width: 1000px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "title"
+            "info"
+            "final"
+            "img";
+        align-items: center;
+        margin-left: 40px;
+    }
+}
+
+.title4 {
+    padding: 5%;
+    grid-area: title;
+    color: gray;
+}
+
+.info {
+    @include Display-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    grid-area: info;
+    padding: 5%;
+    box-sizing: border-box;
+
+    @media screen and (max-width:1000px) {
+        padding: 3%;
+    }
+}
+
+.img {
+    grid-area: img;
+    background-image: url("/DripCSS/IMG/stock_red.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    padding: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.end {
+    grid-area: final;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_FormBehind {
+    height: auto;
+    background-image: url("/DripCSS/IMG/pexels-joaojesusdesign-925706.jpg");
+    background-size: 100%;
+    background-size: contain;
+    padding: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.formReserva {
+    @include boxmodelStandar;
+    @include shadow-BoxBlur;
+    margin-top: 10px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    gap: 20px;
+}

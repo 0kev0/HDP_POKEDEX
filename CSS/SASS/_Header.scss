@@ -1,0 +1,12 @@
+@import 'Variables';
+
+header {
+    height: 10vh;
+    background-color: $color-primario;
+
+    a {
+        font-size: map-get($map: $FontSize, $key: "grande");
+        color: $FontColorBase;
+        text-decoration: none;
+    }
+}

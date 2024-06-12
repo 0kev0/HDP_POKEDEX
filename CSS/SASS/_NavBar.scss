@@ -1,0 +1,387 @@
+$color-primario : rgb(142, 5, 194);
+$color-secundario : rgb(112, 11, 151);
+@import 'FontsStyles';
+@import 'Shadow';
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.nav {
+  @include center;
+  background-color: $color-primario;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  overflow: hidden;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li {
+    float: left;
+
+    a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $color-secundario;
+        color: black;
+      }
+    }
+  }
+}
+
+//FALTA AGREGAR EXPLICACION DE USO Y SUGERENCIAS PARA ESTILOS 
+//Preferiblemente combinar los primeros 2 colores, el tercer color debe hacer contraste con los anteriores
+//PARA EL NAVBAR 2 PUEDE USAR EL MISMO COLOR EN LOS PRIEROS 2 PARAMETROS
+//J=PUEDE ADAPTAR EL JUSTIFICADO A SU PREFERENCIA
+//PREFERIBLEMENTE USAR FUENTES TITULO O TEMA
+@mixin AplicarTemasNavbar($colorBG, $colorBGItems, $ColorHover_A, $SetSombrasLogo, $SetSombrasLetra, $FontPackLogo, $FontLogo, $FontPack_A, $Font_A, $Justify, $key) {
+  .header {
+    background-color: $colorBGItems !important;
+    justify-content: $Justify !important;
+    width: auto;
+    color: #eceff1;
+    padding: 10px 20px;
+  }
+
+  ul li {
+    display: inline-block;
+    position: relative;
+  }
+
+  ul {
+    background: $colorBG !important;
+  }
+
+  justify-content: $Justify;
+  font-family: map-get($map: $FontPack3 , $key:Titulo ) !important;
+  font-size: map-get($map: $FontSize , $key: $key )!important;
+  background-color: $colorBG !important;
+
+  ul li a {
+    font-family: map-get($map: $FontPack_A , $key:$Font_A )!important;
+
+    &:hover {
+      transition: .20s all ease-in; 
+      font-weight: 500;
+      background-color: $ColorHover_A !important;
+    }
+  }
+
+  ul li ul.drip {
+    width: 100%;
+    background: $colorBG !important;
+    position: absolute;
+    z-index: 999;
+    display: none;
+  }
+
+  .logo {
+    font-family: map-get($map: $FontPackLogo , $key: $FontLogo ) !important;
+    font-size: 32px;
+    color: white;
+    text-shadow: 3px 4px 1px $SetSombrasLogo !important;
+    text-decoration: none;
+    margin-left: 15px;
+
+
+    &::first-letter {
+      color: white !important;
+      margin-right: 10px;
+      text-shadow: 4px 4px 2px lighten($color: $SetSombrasLetra, $amount: 15) !important;
+      font-size: 40px;
+    }
+  }
+}
+
+.Drip_logo_TemaC {
+  @extend .titulo;
+
+  h1 {
+    font-family: map-get($map: $FontPack1, $key: Tema);
+    font-size: 32px;
+    color: white;
+    text-shadow: 3px 4px $color-primarioC;
+    text-decoration: none;
+    margin-left: 15px;
+
+    &::first-letter {
+      color: $color-primarioC;
+      margin-right: 10px;
+      text-shadow: 3px 4px black;
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      font-size: 24px; 
+      margin: 0;
+    }
+  }
+
+}
+
+.nav2 {
+  @extend .nav;
+  @include center;
+  //VARIABLES @mixin AplicarTemasNavbar($colorBG,$colorBGItems, $ColorHover_A, $SetSombrasLogo,$SetSombrasLetra, $FontPackLogo, $FontLogo, $FontPack_A, $Font_A, $Justify, $key) 
+  @include AplicarTemasNavbar($color-secundarioB, $color-primarioB, lighten($color: $color-secundarioB, $amount: 20), $color-primarioB, $color-primarioB, $FontPack2, Texto, $FontPack2, Texto, space-between, grande);
+
+  //ESTILOS DISTINTIVOS
+  ul li a {
+    &:hover {
+      transition: .20s all ease-in;
+      text-decoration: underline;
+    }
+  }
+}
+
+.nav2_Ver2 {
+  @extend .nav;
+  @include center;
+  //VARIABLES @mixin AplicarTemasNavbar($colorBG,$colorBGItems, $ColorHover_A, $SetSombrasLogo,$SetSombrasLetra, $FontPackLogo, $FontLogo, $FontPack_A, $Font_A, $Justify, $key) 
+  @include AplicarTemasNavbar($color-secundario, $color-primario, lighten($color: $color-secundario, $amount: 20), $color-primario, $color-primario, $FontPack3, Texto, $FontPack2, Texto, space-between, grande);
+
+  //ESTILOS DISTINTIVOS
+  ul li a {
+    &:hover {
+      transition: .20s all ease-in;
+      text-decoration: underline;
+    }
+  }
+}
+
+.nav3 {
+  //VARIABLES @mixin AplicarTemasNavbar($colorBG,$colorBGItems, $ColorHover_A, $SetSombrasLogo,$SetSombrasLetra, $FontPackLogo, $FontLogo, $FontPack_A, $Font_A, $Justify, $key) 
+  @include AplicarTemasNavbar($color-secundarioC, $color-secundarioC, $color-secundarioC, $color-primarioC, $color-primarioC, $FontPack2, Tema, $FontPack2, Titulo, flex-end, grande);
+  font-size: small;
+  .header {
+    height: 85px;
+    padding: 5px 3%;
+
+  }
+
+  .header .logo {
+    order: 3;
+    margin-left: 15px;
+  }
+
+  .header .nav-links li {
+    padding: 0 20px;
+  }
+
+  .header .nav-links li:hover {
+    transition: .20S all ease-in;
+    transform: scale(1.1);
+  }
+
+  .header .nav-links li a:hover {
+    color: #ffbc0e;
+  }
+
+  .header .btn {
+    order: 2;
+  }
+
+  .header .btn button {
+    margin-left: 20px;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header .btn button:hover {
+    color: #ffbc0e;
+    transform: scale(1.1);
+  }
+  
+  
+  @media only screen and (max-width: 1024px) {
+    .header {
+      height: 85px;
+      padding: 3px 3px;
+    }
+  
+    .header .logo {
+      order: 3;
+      padding: 3px 3px;
+      margin: 0;
+      font-size: map-get($map:$FontSize, $key: pequeno);
+    }
+  
+    .header .nav-links li {
+      padding: 0 3px;
+    }
+  
+    .header .nav-links li:hover {
+      transition: .20s all ease-in;
+      transform: scale(1.1);
+    }
+  
+    .header .nav-links li a:hover {
+      color: #ffbc0e;
+    }
+  
+    .header .btn {
+      order: 2;
+    }
+  
+    .header .btn button {
+      font-weight: 700;
+      margin: 0;
+      color: #1b3039;
+      padding: 1px;
+      background: #eceff1;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .header .btn button:hover {
+      color: #ffbc0e;
+      transform: scale(1.1);
+    }
+  }
+  
+
+  @media only screen and (max-width: 768px) {
+    .Drip_logo_TemaC  {
+    
+      h1 {
+        font-size: 15px;
+        color: white;
+        text-shadow: 3px 4px $color-primarioC;
+        text-decoration: none;
+        margin-left: 2px;
+    
+        &::first-letter {
+          margin-right: 3px;
+          text-shadow: 3px 4px black;
+          font-size: 40px;
+        }
+    
+        @media screen and (max-width: 1000px) {
+          font-size: 20px; 
+          margin: 0;
+        }
+      }
+    
+    }
+   
+    .logo {
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+      margin-left: 5px;
+  
+  
+      &::first-letter {
+        color: white !important;
+        margin-right: 2px;
+        font-size: 25px;
+      }
+    }
+
+    .header {
+      height: 85px;
+      padding: 5px 3px;
+    }
+  
+    .header .logo {
+      order: 3;
+      padding: 5px 53px;
+      margin: 0;
+      font-size: 12px;
+    }
+  
+    .header .nav-links li {
+      padding: 0 3px;
+    }
+  
+    .header .nav-links li:hover {
+      transition: .20s all ease-in;
+      transform: scale(1.1);
+    }
+  
+    .header .nav-links li a:hover {
+      color: #ffbc0e;
+    }
+  
+    .header .btn {
+      order: 2;
+    }
+  
+    .header .btn button {
+      font-weight: 600;
+      margin: 0;
+      color: #1b3039;
+      padding: 2px 1px;
+      background: #eceff1;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .header .btn button:hover {
+      color: #ffbc0e;
+      transform: scale(1.1);
+    }
+  }
+  
+}
+
+
+
+
+.nav4 {
+  //VARIABLES @mixin AplicarTemasNavbar($colorBG,$colorBGItems, $ColorHover_A, $SetSombrasLogo,$SetSombrasLetra, $FontPackLogo, $FontLogo, $FontPack_A, $Font_A, $Justify, $key) 
+  @include AplicarTemasNavbar($color-secundarioD, $colorbg-primarioD, lighten($color: $color-secundarioD, $amount: 20), $color-primarioD, $color-secundarioD, $FontPack2, Tema, $FontPack3, Texto, center, grande);
+
+  .header .logo {
+    order: 3;
+  }
+
+  background-color: rgb(112, 11, 151); // No necesitas dos puntos aquí
+
+  ul li a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 18px;
+  }
+
+  ul li:hover ul.drip {
+    display: block;
+  }
+
+  // Reglas de medios para pantallas pequeas
+  @media screen and (max-width: 800px) {
+    .nav4 ul {
+      display: none; // Oculta el menú principal en pantallas pequeñas
+    }
+
+    #ubicaciones:hover {
+      display: none; // Oculta el menú desplegable de ubicaciones al pasar el ratón sobre él en pantallas pequeñas
+    }
+  }
+}

@@ -1,0 +1,97 @@
+/*Paleta de colores A*/
+$colorbg-primario: rgb(52, 52, 52);
+$colorBg-secundario :rgb(62, 6, 95);
+$color-primario : rgb(142, 5, 194);
+$color-secundario : rgb(112, 11, 151);
+
+$Tema1: ("bg-primario": rgb(52, 52, 52), "Bg-secundario": rgb(62, 6, 95), "primario": rgb(142, 5, 194), "secundario": rgb(112, 11, 151));
+
+/*Paleta de colores B*/
+$colorbg-primarioB: rgb(0, 0, 0);
+$colorBg-secundarioB :rgb(61, 0, 0);
+$color-primarioB : rgb(255, 0, 0);
+$color-secundarioB : rgb(149, 1, 1);
+
+/*Paleta de colores C*/
+$colorbg-primarioC: rgb(7, 15, 43);
+$colorBg-secundarioC :rgb(27, 26, 85);
+$color-primarioC : rgb(146, 144, 195);
+$color-secundarioC : rgb(83, 92, 145);
+
+/*Paleta de colores D*/
+$colorbg-primarioD: rgb(3, 6, 55);
+$colorBg-secundarioD :rgb(60, 7, 83);
+$color-primarioD : rgb(114, 4, 85);
+$color-secundarioD : #910a67;
+
+/*Colores para texto */
+$FontColorBase: rgb(255, 255, 255);
+$colorForm-primario: rgb(61, 3, 3);
+$colorForm-secundario :rgb(97, 0, 154);
+
+// Definición de colores como variables
+$alert-success-bg: #d4edda;
+$alert-success-border: #c3e6cb;
+$alert-success-text: #155724;
+
+$alert-error-bg: #f8d7da;
+$alert-error-border: #f5c6cb;
+$alert-error-text: #721c24;
+
+$alert-warning-bg: #fff3cd;
+$alert-warning-border: #ffeeba;
+$alert-warning-text: #856404;
+
+$alert-info-bg: #d1ecf1;
+$alert-info-border: #bee5eb;
+$alert-info-text: #0c5460;
+
+/*tamanos de fuentes*/
+$FontSize : ("Xpequeno": 16px, "pequeno": 18px, "mediano": 20px, "grande": 30px, "Xgrande": 50px);
+
+/*Heigths*/
+$inputHeigtSizes : ("Xpequeno": 4vh, "pequeno": 4vh, "mediano": 5vh, "grande": 6vh, "Xgrande": 7vh);
+
+/*Width*/
+$inputWithSizes : ("Xpequeno": 10%, "pequeno": 15%, "mediano": 20%, "grande": 50%, "Xgrande": 90%);
+
+/*tamanos de margin*/
+$MarginSizes : ("Xpequeno": 2%, "pequeno": 3%, "mediano": 5%, "grande": 7%, "Xgrande": 8%);
+
+/*tamanos de paddings*/
+$PaddingSizes : ("Xpequeno": 2%, "pequeno": 5%, "mediano": 8%, "grande": 10%, "Xgrande": 15%);
+
+/*tamanos de Buttons*/
+$BtHeight : ("pequeno": 6vh, "mediano": 8vh, "grande": 10vh, "Xgrande": 12vh);
+$BtWidth : ("pequeno": 10vh, "mediano": 12vh, "grande": 14vh, "Xgrande": 18vh);
+
+$borders : ("Xpequeno":1px, "pequeno": 2px, "mediano": 5px, "grande": 8px, "Xgrande": 12px);
+$RangeSizes : ("pequeno": 15%, "mediano": 25%, "grande": 50%, "Xgrande": 60%);
+$AlertsSizes : ("pequeno": 15%, "mediano": 25%, "grande": 50%, "Xgrande": 60%);
+
+//tamanos universales
+$small: 10px;
+$meduium: 15px;
+$large: 20px;
+
+/*Border radius*/
+$estandar : 12px;
+
+/*forms bg*/
+$GrayRdBg: radial-gradient(at left top, #373737, #4f4f4f, #5a5a5a, #636363, #929292);
+
+$bs-body-bg-rgb: 33,
+37,
+41; // Definir variable para el color de fondo del cuerpo
+$bs-primary-rgb: 110,
+168,
+254; // Definir variable para el color primario
+$bd-accent-rgb: 0,
+123,
+255; // Definir variable para el color de acento
+$bd-violet-rgb: 88,
+86,
+214; // Definir variable para el color violeta
+$bd-pink-rgb: 255,
+55,
+95;

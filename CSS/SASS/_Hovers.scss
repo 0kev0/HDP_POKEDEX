@@ -1,0 +1,109 @@
+@import 'Variables';
+
+.Letter_hover {
+    &:hover {
+        transition: .15s all ease-in;
+        font-weight: bold;
+        background-image: linear-gradient(to right, rgb(153, 148, 252), white);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+.list_Letter_hover {
+    &:hover {
+        transition: .5s all ease-in-out;
+        font-size: +15px;
+        font-weight: bold;
+        text-shadow: 0px 2px 10px $color-primario;
+
+    }
+
+    &:active,
+    &:after {
+        transition: .3s all ease-out;
+        font-size: 16px;
+        color: whitesmoke;
+    }
+}
+
+.div_hover_Scale_Up_Down {
+    transition: .45s all ease-in;
+
+    &:hover {
+        transform: scaleX(1.05);
+    }
+
+    &:after {
+        transition: .35s all ease-out;
+        transform: scaleX(1);
+    }
+}
+
+
+.Letter_hover_Scale_Up_Down {
+    transition: 0.45s all ease-in;
+
+    &:hover {
+        transform: scaleX(1.05);
+    }
+
+    &:after {
+        transition: 0.35s all ease-out;
+        transform: scaleX(1);
+    }
+}
+
+.letter-hover-border {
+    transition: border 0.3s all ease-in-out;
+
+    &:hover {
+        text-shadow: 5px 0px 15px whitesmoke;
+    }
+}
+
+.letter-hover-left-color {
+    @extend .letter-hover-border;
+
+    &:hover {
+        text-shadow: -5px 0px $color-secundario;
+    }
+}
+
+.letter-hover-right-color {
+    @extend .letter-hover-border;
+
+    &:hover {
+        text-shadow: 5px 0px $color-secundario;
+    }
+}
+
+.letter-hover-bottom-color {
+    @extend .letter-hover-border;
+
+    &:hover {
+        text-shadow: 0px 5px $color-secundario;
+    }
+}
+
+.letter-hover-top-color {
+    @extend .letter-hover-border;
+
+    &:hover {
+        text-shadow: 0px -5px $color-secundario;
+    }
+}
+
+
+
+
+
+
+
+.div_simple_hover {
+    &:hover {
+        background-color: #6a696952;
+        border-radius: 0px;
+    }
+}
