@@ -2414,7 +2414,10 @@
   font-size: 14px;
 }
 .pokemon-card img {
-  max-width: 60px;
+  max-width: 80px;
+  justify-self: flex-end;
+  margin-bottom: 15px;
+  filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.7));
 }
 
 /*Paleta de colores A*/

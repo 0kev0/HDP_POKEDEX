@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pokemonListContainer = document.querySelector('.Pokedex_List');
 
     function fetchPokemonList() {
-      for (let i = 1; i <= 150; i++) {
+      for (let i = 1; i <= 100; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         fetchPokemonDetails(url, pokemonListContainer, i);
       }
