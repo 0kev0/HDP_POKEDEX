@@ -197,6 +197,7 @@
   from {
     transform: scaleX(0);
   }
+
   to {
     transform: scaleX(1);
   }
@@ -205,7 +206,7 @@
 /* Estilos para el div .Pokedex_Screen */
 .Pokedex_Screen {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 95%;
   height: 95%;
   background-color: rgb(226, 226, 226);
@@ -221,9 +222,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:space-around ;
+  justify-content: space-around;
+  justify-self: flex-end;
   width: 100%;
   height: 100%;
+
   background-image: url("/IMG/Pokeball_minimalista.png");
   background-size: auto;
   background-position: center;
@@ -235,7 +238,7 @@
       transform: translateY(100%);
       /* Empieza desde abajo */
     }
-  
+
     to {
       transform: translateY(0);
       /* Llega hasta arriba */
@@ -243,14 +246,13 @@
   }
 }
 
-.transicionDownUp
-{
+.transicionDownUp {
   @keyframes slide-up {
     from {
       transform: translateY(100%);
       /* Empieza desde abajo */
     }
-  
+
     to {
       transform: translateY(0);
       /* Llega hasta arriba */
@@ -271,9 +273,11 @@
 
   align-self: flex-end;
   align-items: center;
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
+  animation: grow-down-to-top 0.90s ease-in;
+
   // 
   // img {
   //   position: fixed;
@@ -289,24 +293,30 @@
   height: 100%;
   border-radius: 10px;
   margin-right: 5px;
+  background-color: rgb(221, 221, 221);
+
 }
 
 .Pokedex_GeneralStats {
   display: flex;
   width: 100%;
   height: 50%;
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
 }
 
 .Pokedex_Evo {
   @extend .Pokedex_GeneralStats;
+  background-color: rgb(255, 255, 255) !important;
+
 
 }
 
 .Pokedex_Moves {
   @extend .Pokedex_List;
+  background-color: rgb(255, 255, 255) !important;
+
 }
 
 
@@ -314,12 +324,27 @@
 
 .Pokedex_List {
   display: flex;
+  flex-direction: row;
+  gap: 5px;
   width: 30%;
   height: 100%;
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
+  justify-self: flex-start;
+
 }
+
+.MenuBar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+
+}
+
+
+
 
 .Pokedex_Folded {
   display: grid;

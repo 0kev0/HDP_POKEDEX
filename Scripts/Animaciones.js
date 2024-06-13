@@ -46,18 +46,33 @@ function AbrirPokedex(event) {
 
         const logo = document.createElement('img');
         logo.classList = 'img_shadowDark Img_Size_sm';
-        logo.src = 'IMG/icono.png'; 
-        
+        logo.src = 'IMG/icono.png';
+
 
         Pokedex_Screen.appendChild(Pokedex_Rest);
         Pokedex_Rest.appendChild(Titulo);
         Pokedex_Rest.appendChild(Dripcss);
         Pokedex_Rest.appendChild(logo);
 
+        setTimeout(() => {
+            console.log('main menu')
+            Pokedex_Rest.removeChild(Titulo);
+            Pokedex_Rest.removeChild(Dripcss);
+            Pokedex_Rest.removeChild(logo);
+
+            // Crea el elemento Pokedex_List
+            const Pokedex_List = document.createElement('div');
+            Pokedex_List.classList = 'Pokedex_List';
+
+            // Agrega Pokedex_List como primer hijo de Pokedex_Rest
+            Pokedex_Screen.insertBefore(Pokedex_List, Pokedex_Screen.firstChild);
 
 
+        }, 3000);
 
     }, 1000);
+
+
 
 
 }

@@ -8482,7 +8482,7 @@ input[type=radio]:checked:after {
 /* Estilos para el div .Pokedex_Screen */
 .Pokedex_Screen {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 95%;
   height: 95%;
   background-color: rgb(226, 226, 226);
@@ -8499,6 +8499,7 @@ input[type=radio]:checked:after {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  justify-self: flex-end;
   width: 100%;
   height: 100%;
   background-image: url("/IMG/Pokeball_minimalista.png");
@@ -8536,9 +8537,10 @@ input[type=radio]:checked:after {
   width: 30%;
   align-self: flex-end;
   align-items: center;
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
+  animation: grow-down-to-top 0.9s ease-in;
 }
 
 .Pokedex_Stats {
@@ -8549,24 +8551,43 @@ input[type=radio]:checked:after {
   height: 100%;
   border-radius: 10px;
   margin-right: 5px;
+  background-color: rgb(221, 221, 221);
 }
 
 .Pokedex_GeneralStats, .Pokedex_Evo {
   display: flex;
   width: 100%;
   height: 50%;
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
 }
 
+.Pokedex_Evo {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.Pokedex_Moves {
+  background-color: rgb(255, 255, 255) !important;
+}
+
 .Pokedex_List, .Pokedex_Moves {
   display: flex;
+  flex-direction: row;
+  gap: 5px;
   width: 30%;
   height: 100%;
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
+  justify-self: flex-start;
+}
+
+.MenuBar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
 }
 
 .Pokedex_Folded {
