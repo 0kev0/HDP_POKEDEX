@@ -4,13 +4,12 @@
 
 .navbar-responsive {
   @media screen and (max-width: 1024px) {
-    header
-    {
+    header {
       padding: 10px;
     }
-    a
-    {
-    
+
+    a {
+
       font-size: 20px !important;
       padding: 0 25px !important;
     }
@@ -21,8 +20,8 @@
     nav {
       font-size: 15px !important;
       padding: auto 0 !important;
-      header
-      {
+
+      header {
         padding: 10px;
       }
 
@@ -49,9 +48,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    a
-    {
-    
+    a {
+
       font-size: 15px !important;
       padding: 0 10px !important;
     }
@@ -165,6 +163,11 @@
 
 }
 
+.img_shadowDark {
+  filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.7));
+
+}
+
 .overlay img {
   object-fit: contain;
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
@@ -217,6 +220,11 @@
 .inner_carousel_md {
   display: flex;
   transition: transform 0.7s ease-in-out;
+}
+
+.transicion {
+  transition: transform 0.7s ease-in-out;
+
 }
 
 .carousel_md img {
@@ -368,7 +376,7 @@
 //
 .Img_Size_sm {
   height: auto;
-  width: 40vh;
+  width: 20vh;
   object-fit: contain;
 }
 
