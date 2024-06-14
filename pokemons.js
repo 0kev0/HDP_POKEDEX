@@ -28,26 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    function fetchPokemonDetails(url, index) {
-        return fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const pokemonCard = document.createElement('div');
-                pokemonCard.classList.add('pokemon-card');
-                pokemonCard.dataset.index = index;
-                pokemonCard.innerHTML = `
+    async function fetchPokemonDetails(url, index) {
+        const response = await fetch(url);
+        const data = await response.json();
+        const pokemonCard = document.createElement('div');
+        // const BG = document.createElement('img');
+
+        pokemonCard.classList.add('pokemon-card');
+        pokemonCard.dataset.index = index;
+        pokemonCard.innerHTML = `
                     <h2>${index}. ${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
-                    <p>Type: ${data.types.map(type => type.type.name).join(', ')}</p>
                     <img src="${data.sprites.front_default}" alt="${data.name}">
                 `;
-
-                pokemonCard.addEventListener('click', () => showPokemonDetails(data));
-                pokemonCard.addEventListener('click', () => showPokemonIMG(data));
-                pokemonCard.addEventListener('click', () => showPokemonSTATS(data));
-                pokemonCard.addEventListener('click', () => showPokemonMOVES(data));
-
-                return { index, element: pokemonCard };
-            });
+        // <p>Type: ${data.types.map(type => type.type.name).join(', ')}</p>
+        pokemonCard.addEventListener('click', () => showPokemonDetails(data));
+        pokemonCard.addEventListener('click', () => showPokemonIMG(data));
+        pokemonCard.addEventListener('click', () => showPokemonSTATS(data));
+        pokemonCard.addEventListener('click', () => showPokemonMOVES(data));
+        return { index, element: pokemonCard };
     }
 
     function fetchEvolutionChain(url) {
@@ -104,8 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function showPokemonIMG(pokemon) {
         img_pokemon.innerHTML = `
             <img class="img_fix" src="${pokemon.sprites.front_default}" alt="${pokemon.name}">    
+            <img class="Img_Bg" src="IMG/PokeBg_Cortada (2).png" alt="fondo">    
         `;
     }
+
 
     function showPokemonMOVES(pokemon) {
         Mov_pokemons.innerHTML = `

@@ -910,6 +910,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .texto-shadow-box {
   box-shadow: -10px 0 0 rgb(112, 11, 151);
 }
@@ -1346,6 +1353,13 @@
 
 .letter-Gradient {
   background-image: linear-gradient(to right, rgb(146, 144, 195), white);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2423,20 +2437,18 @@
 
 .pokemon-card {
   border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.355);
+  margin: 5px;
   width: 100%;
-  height: 0px;
+  height: 10%;
   background-color: #fff;
   display: flex;
   flex-direction: row;
+  padding: 0px 10px;
   align-items: center;
-  gap: 15px;
+  text-align: center;
   align-items: center;
-  align-self: center;
   justify-content: space-between;
 }
 .pokemon-card p {
@@ -2451,6 +2463,18 @@
   margin-bottom: 15px;
   filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.7));
 }
+.pokemon-card:hover {
+  transition: 0.5s all ease-in;
+  text-decoration: underline;
+}
+.pokemon-card:hover img {
+  max-width: 100px;
+  transition: max-width 0.8s ease-in-out;
+}
+.pokemon-card:hover h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
 
 .info_cartas {
   background-color: #ffffff;
@@ -2462,14 +2486,6 @@
   color: #000000;
   border: 2px solid rgb(0, 0, 0);
   overflow: hidden;
-}
-
-.img_fix {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  display: block;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -2776,6 +2792,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .texto-shadow-box {
   box-shadow: -10px 0 0 rgb(112, 11, 151);
 }
@@ -3324,6 +3347,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .texto-shadow-box {
   box-shadow: -10px 0 0 rgb(112, 11, 151);
 }
@@ -3760,6 +3790,13 @@
 
 .letter-Gradient {
   background-image: linear-gradient(to right, rgb(146, 144, 195), white);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -7241,6 +7278,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .texto-shadow-box {
   box-shadow: -10px 0 0 rgb(112, 11, 151);
 }
@@ -7677,6 +7721,13 @@
 
 .letter-Gradient {
   background-image: linear-gradient(to right, rgb(146, 144, 195), white);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -9019,7 +9070,26 @@ input[type=radio]:checked:after {
   }
 }
 
+.img_fix {
+  z-index: 3;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.Img_Bg {
+  position: absolute;
+  top: 17%;
+  z-index: 1;
+  width: 400px;
+  height: 200px;
+  display: block;
+}
+
 .Pokedex_infoCard {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   height: 65%;
@@ -9030,6 +9100,21 @@ input[type=radio]:checked:after {
   border-radius: 10px;
   margin-right: 5px;
   animation: grow-down-to-top 0.9s ease-in;
+  overflow: hidden;
+}
+.Pokedex_infoCard img {
+  position: absolute;
+  bottom: 45%;
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    /* Empieza desde abajo */
+  }
+  to {
+    transform: translateY(0);
+    /* Llega hasta arriba */
+  }
 }
 
 .Pokedex_Stats {
@@ -9070,6 +9155,7 @@ input[type=radio]:checked:after {
   border-radius: 10px;
   margin-right: 5px;
   justify-self: flex-start;
+  border: solid 1px lightgray;
 }
 
 .MenuBar {
@@ -9117,11 +9203,8 @@ input[type=radio]:checked:after {
   width: 100px;
   height: 100px;
   background-color: #00BFFF;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 8px solid #FFFFFF;
-  /* Borde blanco */
 }
 
 .Dot_Rojo {
@@ -9129,11 +9212,8 @@ input[type=radio]:checked:after {
   width: 20px;
   height: 20px;
   background-color: #ff0000;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 3px solid #040404;
-  /* Borde blanco */
 }
 
 .Dot_Verde {
@@ -9141,11 +9221,8 @@ input[type=radio]:checked:after {
   width: 20px;
   height: 20px;
   background-color: #00ff0d;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 3px solid #040404;
-  /* Borde blanco */
 }
 
 .Dot_Amarillo {
@@ -9153,11 +9230,8 @@ input[type=radio]:checked:after {
   width: 20px;
   height: 20px;
   background-color: #ffee00;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 3px solid #040404;
-  /* Borde blanco */
 }
 
 .Pokedex_Folded_Center {
@@ -9171,13 +9245,9 @@ input[type=radio]:checked:after {
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
-  /* Lado izquierdo */
   border-right: 20px solid transparent;
-  /* Lado derecho */
   border-bottom: 25px solid yellow;
-  /* Lado inferior (altura del triángulo) */
   border-bottom-color: orange;
-  /* Borde anaranjado */
   transform: rotate(90deg);
 }
 
@@ -9919,6 +9989,13 @@ header a {
 
 .letter-Gradient {
   background-image: linear-gradient(to right, rgb(146, 144, 195), white);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -11117,6 +11194,13 @@ header a {
   -webkit-text-fill-color: transparent;
 }
 
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .texto-shadow-box {
   box-shadow: -10px 0 0 rgb(112, 11, 151);
 }
@@ -11553,6 +11637,13 @@ header a {
 
 .letter-Gradient {
   background-image: linear-gradient(to right, rgb(146, 144, 195), white);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.letter-GradientPokemon, .pokemon-card:hover h2 {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 0));
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;

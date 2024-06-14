@@ -215,6 +215,12 @@ $FontPack4: ('Titulo': 'Roboto', 'Tema': 'Montserrat', 'Texto': 'Open Sans');
     -webkit-text-fill-color: transparent;
 }
 
+.letter-GradientPokemon {
+    background-image: linear-gradient(to right, $color-primarioB, rgb(0, 0, 0));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .texto-sombra {
     @extend .text-shadow-bottom;
 }

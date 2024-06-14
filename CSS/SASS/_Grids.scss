@@ -260,11 +260,27 @@
   }
 }
 
+.img_fix {
+  z-index: 3;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+  animation: pulse 2s ease-in-out infinite;
+}
 
+.Img_Bg {
+    position: absolute;
+    top: 17%;
+    z-index: 1;
+    width: 400px;
+    height: 200px;
+    display: block;
 
-
+}
 
 .Pokedex_infoCard {
+  z-index: 2;
   display: flex;
   flex-direction: column;
 
@@ -277,12 +293,30 @@
   border-radius: 10px;
   margin-right: 5px;
   animation: grow-down-to-top 0.90s ease-in;
+  overflow: hidden;
 
-  
-  // img {
-  //   position: fixed;
-  //   bottom: 10px;
-  // }
+  img {
+    position: absolute;
+    bottom: 45%;
+  }
+
+  // background-image: url("/IMG/Pokeball_minimalista.png");
+  // background-size: auto;
+  // background-position: center top;
+  // background-repeat: no-repeat;
+  // animation: slide-up 1s ease-in-out;
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+      /* Empieza desde abajo */
+    }
+
+    to {
+      transform: translateY(0);
+      /* Llega hasta arriba */
+    }
+  }
 
 }
 
@@ -322,7 +356,6 @@
 
 
 
-
 .Pokedex_List {
   display: flex;
   flex-direction: row;
@@ -333,7 +366,7 @@
   border-radius: 10px;
   margin-right: 5px;
   justify-self: flex-start;
-
+  border: solid 1px lightgray;
 }
 
 .MenuBar {
