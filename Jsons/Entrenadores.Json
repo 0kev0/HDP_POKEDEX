@@ -1,0 +1,33 @@
+{
+  "Entrenadores": [
+    {
+      "nombre": "Limo",
+      "urlImagen": "",
+      "Lista Pokemones": []
+    },
+
+    {
+      "nombre": "Chepe",
+      "urlImagen": "",
+      "Lista Pokemones": []
+    },
+
+    {
+      "nombre": "Kevin",
+      "urlImagen": "",
+      "Lista Pokemones": []
+    },
+
+    {
+      "nombre": "Chaomin",
+      "urlImagen": "",
+      "Lista Pokemones": []
+    },
+    
+    {
+      "nombre": "Arca",
+      "urlImagen": "",
+      "Lista Pokemones": []
+    }
+  ]
+}

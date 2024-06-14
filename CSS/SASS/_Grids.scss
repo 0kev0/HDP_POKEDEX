@@ -278,11 +278,12 @@
   margin-right: 5px;
   animation: grow-down-to-top 0.90s ease-in;
 
-  // 
+  
   // img {
   //   position: fixed;
   //   bottom: 10px;
   // }
+
 }
 
 .Pokedex_Stats {
@@ -343,9 +344,6 @@
 
 }
 
-
-
-
 .Pokedex_Folded {
   display: grid;
   border: 10px solid darken($color: rgb(220, 10, 45), $amount: 20);
@@ -388,11 +386,8 @@
   width: 100px;
   height: 100px;
   background-color: #00BFFF;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 8px solid #FFFFFF;
-  /* Borde blanco */
 }
 
 .Dot_Rojo {
@@ -400,11 +395,8 @@
   width: 20px;
   height: 20px;
   background-color: #ff0000;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 3px solid #040404;
-  /* Borde blanco */
 }
 
 .Dot_Verde {
@@ -412,11 +404,8 @@
   width: 20px;
   height: 20px;
   background-color: #00ff0d;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 3px solid #040404;
-  /* Borde blanco */
 }
 
 .Dot_Amarillo {
@@ -424,11 +413,8 @@
   width: 20px;
   height: 20px;
   background-color: #ffee00;
-  /* Celeste */
   border-radius: 50%;
-  /* Hace que el elemento sea un círculo */
   border: 3px solid #040404;
-  /* Borde blanco */
 }
 
 .Pokedex_Folded_Center {
@@ -443,13 +429,9 @@
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
-  /* Lado izquierdo */
   border-right: 20px solid transparent;
-  /* Lado derecho */
   border-bottom: 25px solid yellow;
-  /* Lado inferior (altura del triángulo) */
   border-bottom-color: orange;
-  /* Borde anaranjado */
   transform: rotate(90deg);
 }
 

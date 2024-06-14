@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const pokemonListContainer = document.querySelector('.Pokedex_List');
 
     function fetchPokemonList() {
-      for (let i = 1; i <= 100; i++) {
+      for (let i = 1; i <= 70; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        // console.log(i);
         fetchPokemonDetails(url, pokemonListContainer, i);
       }
     }
@@ -14,11 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
           const pokemonCard = document.createElement('div');
           pokemonCard.classList.add('pokemon-card');
-          pokemonCard.innerHTML = `
+          pokemonCard.innerHTML =
+            `
             <h2>${index}. ${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
-            <p>Type: ${data.types.map(type => type.type.name).join(', ')}</p>
+            <p> Type: ${data.types.map(type => type.type.name).join(', ')} </p>
             <img src="${data.sprites.front_default}" alt="${data.name}">
           `;
+          console.log( index + ' >' +data.name.charAt(0).toUpperCase() + data.name.slice(1));
           container.appendChild(pokemonCard);
         })
         .catch(error => {
