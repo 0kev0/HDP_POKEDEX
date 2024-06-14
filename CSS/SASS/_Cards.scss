@@ -349,146 +349,28 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 300px;
-    margin: 0 auto;
+    margin: auto;
     color: #000000;
-    border: 2px solid black;
-    h2{
-        
-    }
-    p{
-    
-    }
-    /*.pokemon-card {
-        background-color: #f0f0f0;
-        border-radius: 16px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        width: 300px;
-        margin: 0 auto;
-      }
-      
-      .pokemon-card__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-      
-      .pokemon-card__name {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-      }
-      
-      .pokemon-card__id {
-        font-size: 16px;
-        color: #666;
-      }
-      
-      .pokemon-card__image {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto;
-        display: block;
-      }
-      
-      .pokemon-card__types {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
-      
-      .pokemon-card__type {
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 8px 16px;
-        border-radius: 8px;
-        margin: 0 8px;
-      }
-      
-      .pokemon-card__info {
-        margin-bottom: 20px;
-      }
-      
-      .pokemon-card__info-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 10px;
-      }
-      
-      .pokemon-card__info-list {
-        list-style: none;
-        padding: 0;
-      }
-      
-      .pokemon-card__info-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 5px;
-      }
-      
-      .pokemon-card__info-key {
-        font-size: 16px;
-        color: #666;
-      }
-      
-      .pokemon-card__info-value {
-        font-size: 16px;
-        color: #333;
-      }
-      
-      .pokemon-card__breeding {
-        margin-bottom: 20px;
-      }
-      
-      .pokemon-card__gender {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-      
-      .pokemon-card__gender-icon {
-        font-size: 16px;
-      }
-      
-      .pokemon-card__gender-percentage {
-        font-size: 16px;
-        color: #333;
-      }
-      
-      .pokemon-card__egg-groups {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-      
-      .pokemon-card__egg-groups-key {
-        font-size: 16px;
-        color: #666;
-      }
-      
-      .pokemon-card__egg-groups-value {
-        font-size: 16px;
-        color: #333;
-      }
-      
-      .pokemon-card__egg-cycle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .pokemon-card__egg-cycle-key {
-        font-size: 16px;
-        color: #666;
-      }
-      
-      .pokemon-card__egg-cycle-value {
-        font-size: 16px;
-        color: #333;
-      }*/
+    border: 2px solid rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.img_fix {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
