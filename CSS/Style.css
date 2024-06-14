@@ -2452,6 +2452,37 @@
   filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.7));
 }
 
+.info_cartas {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+  color: #000000;
+  border: 2px solid rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+.img_fix {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*Paleta de colores A*/
 /*Paleta de colores B*/
 /*Paleta de colores C*/
@@ -4785,12 +4816,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  max-height: 400px;
-  width: 90%;
-  max-width: 600px;
   margin: 10vh auto 0 auto;
-  background-color: rgba(0, 0, 0, 0.08);
   /* Cambia el valor de opacidad según tus necesidades */
 }
 
@@ -12583,12 +12609,7 @@ header a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  max-height: 400px;
-  width: 90%;
-  max-width: 600px;
   margin: 10vh auto 0 auto;
-  background-color: rgba(0, 0, 0, 0.08);
   /* Cambia el valor de opacidad según tus necesidades */
 }
 
