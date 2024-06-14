@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const list_pokemons = document.getElementById('pokemon-listaEvo');
     const estd_pokemons = document.getElementById('estd_Pokemon');
     const Mov_pokemons = document.getElementById('Mov_Pokemon');
+    const saveButton = document.getElementById('save-selection');
+    const maxSelection = 6;
+    let selectedPokemons = [];
 
     function fetchPokemonList() {
         let promises = [];
@@ -45,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         pokemonCard.addEventListener('click', () => showPokemonIMG(data));
         pokemonCard.addEventListener('click', () => showPokemonSTATS(data));
         pokemonCard.addEventListener('click', () => showPokemonMOVES(data));
+
+        //Cambios importantes
+        pokemonCard.addEventListener('click', () => togglePokemonSelection(data, pokemonCard));
         return { index, element: pokemonCard };
     }
 
@@ -133,5 +139,44 @@ document.addEventListener('DOMContentLoaded', function() {
             </ul>
         `;
     }
+
+    //Cambios nuevos e importantes
+    function togglePokemonSelection(pokemon, cardElement) {
+        const isSelected = selectedPokemons.find(p => p.id === pokemon.id);
+        if (isSelected) {
+            selectedPokemons = selectedPokemons.filter(p => p.id !== pokemon.id);
+            cardElement.classList.remove('selected-pokemon-card');
+        } else {
+            if (selectedPokemons.length < maxSelection) {
+                selectedPokemons.push(pokemon);
+                cardElement.classList.add('selected-pokemon-card');
+            } else {
+                alert('Solo puedes seleccionar hasta 6 Pokémon');
+            }
+        }
+    }
+
+    function savePokemonSelection() {
+        const entrenador = prompt('Ingresa el nombre del entrenador:');
+        if (entrenador) {
+            const trainerData = {
+                nombre: entrenador,
+                urlImagen: '', // Puedes añadir una URL de imagen si lo deseas
+                "Lista Pokemones": selectedPokemons.map(pokemon => ({
+                    id: pokemon.id,
+                    name: pokemon.name,
+                    image: pokemon.sprites.front_default
+                }))
+            };
+
+            // Almacenar localmente los datos del entrenador
+            let entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
+            entrenadores.push(trainerData);
+            localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
+
+            alert('Selección de Pokémon guardada localmente');
+        }
+    }
+    saveButton.addEventListener('click', savePokemonSelection);
     fetchPokemonList();
 });
