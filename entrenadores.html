@@ -79,7 +79,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('trainers-pokemon-list');
             const entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
-
+        
             entrenadores.forEach(trainer => {
                 const trainerElement = document.createElement('div');
                 trainerElement.classList.add('trainer-card');
@@ -98,7 +98,7 @@
                 `;
                 container.appendChild(trainerElement);
             });
-        });
+        });        
     </script>
 </body>
 </html>

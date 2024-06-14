@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-
+    
     function savePokemonSelection() {
         const entrenador = prompt('Ingresa el nombre del entrenador:');
         if (entrenador) {
@@ -168,15 +168,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     image: pokemon.sprites.front_default
                 }))
             };
-
+    
             // Almacenar localmente los datos del entrenador
             let entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
-            entrenadores.push(trainerData);
+            
+            // Buscar si el entrenador ya existe
+            const existingTrainerIndex = entrenadores.findIndex(t => t.nombre === entrenador);
+            
+            if (existingTrainerIndex !== -1) {
+                // Actualizar el entrenador existente
+                entrenadores[existingTrainerIndex]["Lista Pokemones"] = trainerData["Lista Pokemones"];
+            } else {
+                // Añadir un nuevo entrenador
+                entrenadores.push(trainerData);
+            }
+    
             localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
-
+    
             alert('Selección de Pokémon guardada localmente');
         }
     }
+    
     saveButton.addEventListener('click', savePokemonSelection);
     fetchPokemonList();
 });
