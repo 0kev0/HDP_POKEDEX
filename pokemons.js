@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (entrenador) {
             const trainerData = {
                 nombre: entrenador,
-                urlImagen: '', // Puedes añadir una URL de imagen si lo deseas
+                urlImagen: '', 
                 "Lista Pokemones": selectedPokemons.map(pokemon => ({
                     id: pokemon.id,
                     name: pokemon.name,
