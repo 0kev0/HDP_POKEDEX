@@ -8175,7 +8175,7 @@
   margin-left: 10px;
 }
 
-.rangeimput, .rangeimput_Sm, .rangeimput_Md, .rangeimput_Gr {
+.rangeimput, .rangeimput_Sm, .rangeimput_Md, .rangeimput_Stat, .rangeimput_Gr {
   border-radius: 8px;
   width: 25%;
   height: 8px;
@@ -8187,14 +8187,39 @@
   accent-color: rgb(142, 5, 194);
 }
 
+.rangeimput_Stat {
+  width: 90% !important;
+  height: 3px !important;
+  accent-color: rgb(255, 0, 0);
+  margin: 0;
+}
+.rangeimput_Stat:disabled {
+  /* Tus estilos aquí */
+  accent-color: rgb(255, 0, 0); /* Reemplaza 'tuColor' con el color que deseas */
+  opacity: 1; /* Esto asegura que el input no se vea opaco */
+}
+
+/* Ocultar la esfera del input range */
+.rangeimput_Stat::-webkit-slider-thumb {
+  visibility: hidden;
+}
+
+.rangeimput_Stat::-moz-range-thumb {
+  visibility: hidden;
+}
+
+.rangeimput_Stat::-ms-thumb {
+  visibility: hidden;
+}
+
 .rangeimput_Md {
   width: 25%;
-  accent-color: rgb(61, 0, 0);
+  accent-color: rgb(27, 26, 85);
 }
 
 .rangeimput_Sm {
   width: 15%;
-  accent-color: rgb(114, 4, 85);
+  accent-color: rgb(3, 6, 55);
 }
 
 legend {
@@ -9076,7 +9101,8 @@ input[type=radio]:checked:after {
   height: 200px;
   margin: 0 auto;
   display: block;
-  animation: pulse 2s ease-in-out infinite;
+  animation: pulse 4s ease-in-out infinite;
+  filter: drop-shadow(5px 5px 15px rgba(1, 1, 1, 0.734));
 }
 
 .Img_Bg {
@@ -9106,17 +9132,15 @@ input[type=radio]:checked:after {
   position: absolute;
   bottom: 45%;
 }
-@keyframes slide-up {
+
+@keyframes grow-down-to-top {
   from {
-    transform: translateY(100%);
-    /* Empieza desde abajo */
+    transform: scaleY(0);
   }
   to {
-    transform: translateY(0);
-    /* Llega hasta arriba */
+    transform: scaleY(1);
   }
 }
-
 .Pokedex_Stats {
   display: flex;
   flex-direction: column;
@@ -9130,19 +9154,25 @@ input[type=radio]:checked:after {
 
 .Pokedex_GeneralStats, .Pokedex_Evo {
   display: flex;
+  align-items: flex-start;
   width: 100%;
-  height: 50%;
+  height: 70%;
   background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
+  padding: 0px;
+  animation: grow-down-to-top 0.9s ease-in;
 }
 
 .Pokedex_Evo {
   background-color: rgb(255, 255, 255) !important;
+  height: 30% !important;
+  animation: grow-down-to-top 0.9s ease-in;
 }
 
 .Pokedex_Moves {
   background-color: rgb(255, 255, 255) !important;
+  animation: grow-down-to-top 0.9s ease-in;
 }
 
 .Pokedex_List, .Pokedex_Moves {
@@ -9156,8 +9186,17 @@ input[type=radio]:checked:after {
   margin-right: 5px;
   justify-self: flex-start;
   border: solid 1px lightgray;
+  animation: grow-left-to-right 0.9s ease-in;
 }
 
+@keyframes grow-left-to-right {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
 .MenuBar {
   display: flex;
   flex-direction: row;

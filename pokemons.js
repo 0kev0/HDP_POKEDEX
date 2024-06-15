@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const pokemonListContainer = document.getElementById('pokedex_list');
     const pokemonDetailsContainer = document.getElementById('pokemon-details');
     const img_pokemon = document.getElementById('img_Pokemon');
@@ -45,7 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         pokemonCard.addEventListener('click', () => showPokemonIMG(data));
         pokemonCard.addEventListener('click', () => showPokemonSTATS(data));
         pokemonCard.addEventListener('click', () => showPokemonMOVES(data));
-        return { index, element: pokemonCard };
+        return {
+            index,
+            element: pokemonCard
+        };
     }
 
     function fetchEvolutionChain(url) {
@@ -73,28 +76,28 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(evolutionData => {
                 const evolutions = getEvolutions(evolutionData.chain);
-            /*
-                pokemonDetailsContainer.innerHTML = `
-                    <h2>${pokemon.id}. ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-                    <p>Type: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
-                    <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
-                    <p>Weight: ${pokemon.weight}</p>
-                    <p>Height: ${pokemon.height}</p>
-                    <p>Stats:</p>
-                    <ul>
-                        ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
-                    </ul>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-                    <h3>Moves:</h3>
-                    <ul>
-                        ${pokemon.moves.slice(0, 5).map(move => `<li>${move.move.name}</li>`).join('')}
-                    </ul>
-                    <h3>Evolutions:</h3>
-                    <ul>
-                        ${evolutions.map(evo => `<li>${evo}</li>`).join('')}
-                    </ul>
-                `;
-                */
+                /*
+                    pokemonDetailsContainer.innerHTML = `
+                        <h2>${pokemon.id}. ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
+                        <p>Type: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
+                        <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
+                        <p>Weight: ${pokemon.weight}</p>
+                        <p>Height: ${pokemon.height}</p>
+                        <p>Stats:</p>
+                        <ul>
+                            ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
+                        </ul>
+                        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+                        <h3>Moves:</h3>
+                        <ul>
+                            ${pokemon.moves.slice(0, 5).map(move => `<li>${move.move.name}</li>`).join('')}
+                        </ul>
+                        <h3>Evolutions:</h3>
+                        <ul>
+                            ${evolutions.map(evo => `<li>${evo}</li>`).join('')}
+                        </ul>
+                    `;
+                    */
                 showPokemons(evolutions);
             });
     }
@@ -115,16 +118,16 @@ document.addEventListener('DOMContentLoaded', function() {
             </ul>
         `;
     }
-    
+
     function showPokemonSTATS(pokemon) {
         estd_pokemons.innerHTML = `
-            <h3>Stats:</h3>
+            <p>Stats:</p>
             <ul>
-                ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
-            </ul>
-        `;
+                ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat} <input class="rangeimput_Stat" type="range" value="${stat.base_stat}" min="0" max="200" disabled ></li>`).join('')}
+            </ul>`;
     }
     
+
     function showPokemons(evolutions) {
         list_pokemons.innerHTML = `
             <h3>Evolutions:</h3>
