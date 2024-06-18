@@ -107,7 +107,17 @@ body {
     filter: grayscale(100%) brightness(0);
     width: 250px;
     height: 250px;
+    animation: rotar 2s linear;
 }
+
+@keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(1080deg); 
+    }
+  }
 
 .pokemon-color {
     width: 250px;
