@@ -135,3 +135,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     fetchPokemonList();
 });
+
+
+// script.js
+
+function handleImgBgVisibility(mediaQuery) {
+    const imgBgElements = document.querySelectorAll('.Img_Bg');
+  
+    if (mediaQuery.matches) {
+      imgBgElements.forEach(el => {
+        el.style.display = 'none';
+      });
+    } else {
+      imgBgElements.forEach(el => {
+        el.style.display = '';
+      });
+    }
+  }
+  
+  // Define la media query
+  const mediaQuery = window.matchMedia('(max-width: 600px)');
+  
+  // Llama a la función al cargar la página y cuando cambia la media query
+  handleImgBgVisibility(mediaQuery);
+  mediaQuery.addListener(handleImgBgVisibility);
+  

@@ -77,7 +77,10 @@
 
 
   @media screen and (max-width: 550px) {
-    display: none;
+    
+    a{
+      font-size: 12px !important;
+    }
   }
 
 }
