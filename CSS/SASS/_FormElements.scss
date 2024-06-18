@@ -367,16 +367,45 @@
     accent-color: $color-primario;
 }
 
+.rangeimput_Stat {
+    @extend .rangeimput;
+    width: 90% !important;
+    height: 3px !important;
+    accent-color: $color-primarioB;
+    margin: 0;
+
+    &:disabled {
+        /* Tus estilos aquí */
+        accent-color: $color-primarioB; /* Reemplaza 'tuColor' con el color que deseas */
+        opacity: 1; /* Esto asegura que el input no se vea opaco */
+    }
+}
+
+/* Ocultar la esfera del input range */
+.rangeimput_Stat::-webkit-slider-thumb {
+    visibility: hidden;
+}
+
+.rangeimput_Stat::-moz-range-thumb {
+    visibility: hidden;
+}
+
+.rangeimput_Stat::-ms-thumb {
+    visibility: hidden;
+}
+
+
+
 .rangeimput_Md {
     @extend .rangeimput;
     width: map-get($map: $RangeSizes, $key: mediano);
-    accent-color: $colorBg-secundarioB;
+    accent-color: $colorBg-secundarioC;
 }
 
 .rangeimput_Sm {
     @extend .rangeimput;
     width: map-get($map: $RangeSizes, $key: pequeno);
-    accent-color: $color-primarioD;
+    accent-color: $colorbg-primarioD;
 }
 
 

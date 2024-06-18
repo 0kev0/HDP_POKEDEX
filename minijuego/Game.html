@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="IMG/favicon.ico" />
+    <link rel="stylesheet" href="Styles2.css" />
+    <title>Adivina el Pokémon</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Adivina cuál es el Pokémon</h1>
+      <br />
+      <div
+        id="pokedex-container"
+        class="Pokedex_Screen2"
+        onclick="iniciarJuego()"
+      >
+        <p>Haz clic para empezar el juego</p>
+      </div>
+      <div class="Pokedex_UnFolded" id="pokedex-unfolded">
+        <div id="game-container" class="game-container">
+          <img
+            id="pokemon-sombra"
+            class="pokemon-sombra"
+            src=""
+            alt=" "
+          />
+        </div>
+        <div id="opciones" class="opciones"></div>
+      </div>
+    </div>
+
+    <audio id="background-music" loop>
+      <source src="IMG_minigame/audio.m4a" type="audio/mpeg" />
+    </audio>
+    <script src="pokemons.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

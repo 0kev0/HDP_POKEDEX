@@ -1,0 +1,155 @@
+body {
+    background-image: url(IMG_minigame/bg_minigame.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0; 
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center; 
+    height: 100vh;
+    width: 100vh;
+}
+
+.Dot_Rojo {
+    margin: 10px 0px 0px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    border: 3px solid #040404;
+  }
+  
+  .Dot_Verde {
+    margin: 10px 0px 0px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #00ff0d;
+    border-radius: 50%;
+    border: 3px solid #040404;
+  }
+  
+  .Dot_Amarillo {
+    margin: 10px 0px 0px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffee00;
+    border-radius: 50%;
+    border: 3px solid #040404;
+  }
+
+
+.Pokedex_UnFolded {
+    display: none; 
+    border: 10px solid rgb(200, 8, 36);
+    width: 55vh;
+    height: 65vh;
+    background-color: rgb(220, 10, 45);
+    border-radius: 10px;
+    margin-top: 20px; 
+    margin-left: 150px;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.game-container {
+    background-color: gainsboro;
+    height: 40vh;
+    width: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin-top: 25px;
+    border-radius: 10px;
+    border: solid 3px black;
+}
+
+
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    gap: 10px; 
+}
+
+.Pokedex_Screen2 {
+    display: flex;
+    width: 65vh;
+    height: 65vh;
+    margin-left: 115px;
+    background-color: rgb(226, 226, 226);
+    border-radius: 10px;
+    object-fit: contain;
+    padding: 5px;
+    background-image: url("/IMG/Pokeball_minimalista.png");
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Pokedex_Screen2:hover {
+    transform: scale(1.1); 
+}
+
+
+.pokemon-sombra {
+    filter: grayscale(100%) brightness(0);
+    width: 250px;
+    height: 250px;
+    animation: rotar 2s linear;
+}
+
+@keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(1080deg); 
+    }
+  }
+
+.pokemon-color {
+    width: 250px;
+    height: 250px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.pokemon-color:hover {
+    transform: scale(1.1);
+}
+
+.boton-opcion {
+    margin: 5px;
+    padding: 10px;
+    width: 100px;
+    height: 55px;
+    background-color: yellow;
+    border: solid 1px black;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+}
+
+.boton-opcion:hover {
+    background-color: darkgray;
+}
+
+@keyframes move-forward {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.move-forward {
+    animation: move-forward 3s forwards;
+}
