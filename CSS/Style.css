@@ -9059,6 +9059,40 @@ input[type=radio]:checked:after {
   animation: grow-left-to-right 0.5s ease-in-out;
 }
 
+/* Estilos para el div .Pokedex_Screen2 COPIA DE POKEDEX SCREEN*/
+.Pokedex_Screen2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  width: 75vh;
+  height: 75vh;
+  background-color: rgb(226, 226, 226);
+  border-radius: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 5px;
+  /* Aplica la animación */
+  animation: grow-left-to-right 0.5s ease-in-out;
+  background-image: url("/IMG/Pokeball_minimalista.png");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slide-up 1s ease-in-out;
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    /* Empieza desde abajo */
+  }
+  to {
+    transform: translateY(0);
+    /* Llega hasta arriba */
+  }
+}
+
 @media (max-width: 1000px) {
   .Pokedex_Screen {
     display: grid;
