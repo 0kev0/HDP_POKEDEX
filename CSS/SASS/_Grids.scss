@@ -185,7 +185,7 @@
   width: 90%;
   height: 85vh;
   margin: auto;
-  margin-top: 2%;
+  margin-top: 20px;
   // gap: 5px;
   background: rgb(220, 10, 45);
   border-radius: 10px;
@@ -213,10 +213,96 @@
   border-radius: 10px;
   object-fit: contain;
   padding: 5px;
-  /* Aplica la animación */
+  overflow: scroll;
   animation: grow-left-to-right 0.5s ease-in-out;
 }
 
+@media (max-width: 1000px) {
+  .Pokedex_Screen {
+    //background-color: #040404;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+  }
+  
+  .Pokedex_List {
+    width: 100% !important;
+    height: 250px;
+    padding: 0;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .Pokedex_infoCard {
+    width: 100% !important;
+  }
+  
+  .pokemon-card {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column !important;
+  }
+  
+  .pokemon-card h2 {
+    display: block;
+  }
+  
+  .Pokedex_Stats {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: row !important;
+  }
+  
+  .Pokedex_GeneralStats,
+  .Pokedex_Evo {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    height: 300px;
+  }
+  .Pokedex_Moves{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+}
+
+/* Media query para ajustar estilos cuando el ancho de la ventana es menor o igual a 600px */
+@media (max-width: 600px) {
+  .Pokedex_List {
+    width: 100% !important;
+    height: 150px !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  
+  .pokemon-card {
+    display: flex;
+    flex-direction: column !important;
+  }
+  
+  .pokemon-card h2 {
+    display: none;
+  }
+  .Pokedex_infoCard{
+    height: auto !important;
+    background-color: #ff0000;
+  }
+  .img_fix{
+    width: 100px !important;
+    height: 100px !important;
+    margin-bottom: 110px !important;
+  }
+  .Img_Bg {
+    display: none !important;
+  }
+}
 
 .Pokedex_rest {
   display: flex;
@@ -270,24 +356,16 @@
   filter: drop-shadow(5px 5px 15px rgba(1, 1, 1, 0.734));
 }
 
-.Img_Bg {
-    position: absolute;
-    top: 17%;
-    z-index: 1;
-    width: 400px;
-    height: 200px;
-    display: block;
 
-}
+
+  
 
 .Pokedex_infoCard {
   z-index: 2;
   display: flex;
   flex-direction: column;
-
   height: 65%;
   width: 30%;
-
   align-self: flex-end;
   align-items: center;
   background-color: rgb(255, 255, 255) !important;
@@ -300,6 +378,25 @@
     position: absolute;
     bottom: 45%;
   }
+
+  .Img_Bg {
+    position: absolute;
+    top: 17%;
+    z-index: 1;
+    width: 400px;
+    height: 200px;
+    display: block;
+}
+
+@media (max-width: 1000px) {
+  .Img_Bg {
+    margin-top: 65px;
+    margin-left: 0px;
+    position: absolute;
+    width: auto;
+    height: auto;
+  }
+}
 
   // background-image: url("/IMG/Pokeball_minimalista.png");
   // background-size: auto;
@@ -318,6 +415,8 @@
   }
 }
 
+
+
 .Pokedex_Stats {
   display: flex;
   flex-direction: column;
@@ -327,14 +426,13 @@
   border-radius: 10px;
   margin-right: 5px;
   background-color: rgb(221, 221, 221);
-
 }
 
 .Pokedex_GeneralStats {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 70%;
+  //height: 50%;
   background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
@@ -347,11 +445,14 @@
 .Pokedex_Evo {
   @extend .Pokedex_GeneralStats;
   background-color: rgb(255, 255, 255) !important;
-  height: 30% !important;
-  animation: grow-down-to-top 0.90s ease-in;
-
-
-
+  align-items: center;
+  ul{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 !important;
+  }
 }
 
 .Pokedex_Moves {
@@ -365,7 +466,7 @@
 
 .Pokedex_List {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 5px;
   width: 30%;
   height: 100%;
@@ -387,6 +488,22 @@
   }
 }
 
+  @media (max-width: 800px) {
+    h2 {
+      margin: 10px;
+      font-size: 12px;
+    }
+    img {
+      display: block; 
+      margin: 20px auto; 
+    }
+    .Pokedex_List{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
 
 .MenuBar {
   display: flex;
@@ -402,7 +519,7 @@
   width: 400px;
   height: 600px;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 20px;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr;
   grid-template-areas:
@@ -423,6 +540,8 @@
     width: 200px;
     height: 200px;
   }
+
+  
 
 }
 

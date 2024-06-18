@@ -4636,8 +4636,8 @@
   }
 }
 @media screen and (max-width: 550px) {
-  .navbar-responsive {
-    display: none;
+  .navbar-responsive a {
+    font-size: 12px !important;
   }
 }
 
@@ -9030,7 +9030,7 @@ input[type=radio]:checked:after {
   width: 90%;
   height: 85vh;
   margin: auto;
-  margin-top: 2%;
+  margin-top: 20px;
   background: rgb(220, 10, 45);
   border-radius: 10px;
 }
@@ -9055,10 +9055,86 @@ input[type=radio]:checked:after {
   -o-object-fit: contain;
      object-fit: contain;
   padding: 5px;
-  /* Aplica la animación */
+  overflow: scroll;
   animation: grow-left-to-right 0.5s ease-in-out;
 }
 
+@media (max-width: 1000px) {
+  .Pokedex_Screen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+  }
+  .Pokedex_List, .Pokedex_Moves {
+    width: 100% !important;
+    height: 250px;
+    padding: 0;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  .Pokedex_infoCard {
+    width: 100% !important;
+  }
+  .pokemon-card {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column !important;
+  }
+  .pokemon-card h2 {
+    display: block;
+  }
+  .Pokedex_Stats {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: row !important;
+  }
+  .Pokedex_GeneralStats,
+  .Pokedex_Evo {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    height: 300px;
+  }
+  .Pokedex_Moves {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+}
+/* Media query para ajustar estilos cuando el ancho de la ventana es menor o igual a 600px */
+@media (max-width: 600px) {
+  .Pokedex_List, .Pokedex_Moves {
+    width: 100% !important;
+    height: 150px !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  .pokemon-card {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .pokemon-card h2 {
+    display: none;
+  }
+  .Pokedex_infoCard {
+    height: auto !important;
+    background-color: #ff0000;
+  }
+  .img_fix {
+    width: 100px !important;
+    height: 100px !important;
+    margin-bottom: 110px !important;
+  }
+  .Img_Bg {
+    display: none !important;
+  }
+}
 .Pokedex_rest {
   display: flex;
   flex-direction: column;
@@ -9105,15 +9181,6 @@ input[type=radio]:checked:after {
   filter: drop-shadow(5px 5px 15px rgba(1, 1, 1, 0.734));
 }
 
-.Img_Bg {
-  position: absolute;
-  top: 17%;
-  z-index: 1;
-  width: 400px;
-  height: 200px;
-  display: block;
-}
-
 .Pokedex_infoCard {
   z-index: 2;
   display: flex;
@@ -9132,8 +9199,7 @@ input[type=radio]:checked:after {
   position: absolute;
   bottom: 45%;
 }
-
-@keyframes grow-down-to-top {
+@keyframes slide-up {
   from {
     transform: scaleY(0);
   }
@@ -9156,7 +9222,7 @@ input[type=radio]:checked:after {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 70%;
+  height: 50%;
   background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
@@ -9166,8 +9232,6 @@ input[type=radio]:checked:after {
 
 .Pokedex_Evo {
   background-color: rgb(255, 255, 255) !important;
-  height: 30% !important;
-  animation: grow-down-to-top 0.9s ease-in;
 }
 
 .Pokedex_Moves {
@@ -9177,7 +9241,7 @@ input[type=radio]:checked:after {
 
 .Pokedex_List, .Pokedex_Moves {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 5px;
   width: 30%;
   height: 100%;
@@ -9186,17 +9250,8 @@ input[type=radio]:checked:after {
   margin-right: 5px;
   justify-self: flex-start;
   border: solid 1px lightgray;
-  animation: grow-left-to-right 0.9s ease-in;
 }
 
-@keyframes grow-left-to-right {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
 .MenuBar {
   display: flex;
   flex-direction: row;
@@ -9210,7 +9265,7 @@ input[type=radio]:checked:after {
   width: 400px;
   height: 600px;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 20px;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr;
   grid-template-areas: "Top" "center" "bottom";
@@ -10375,6 +10430,16 @@ header a {
 .nav2 ul li a:hover {
   transition: 0.2s all ease-in;
   text-decoration: underline;
+}
+@media screen and (max-width: 600px) {
+  .nav2 {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav2 ul {
+    font-size: 15px;
+  }
 }
 
 .nav2_Ver2 {
@@ -12522,8 +12587,8 @@ header a {
   }
 }
 @media screen and (max-width: 550px) {
-  .navbar-responsive {
-    display: none;
+  .navbar-responsive a {
+    font-size: 12px !important;
   }
 }
 
