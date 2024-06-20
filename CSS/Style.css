@@ -9059,40 +9059,6 @@ input[type=radio]:checked:after {
   animation: grow-left-to-right 0.5s ease-in-out;
 }
 
-/* Estilos para el div .Pokedex_Screen2 COPIA DE POKEDEX SCREEN*/
-.Pokedex_Screen2 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  display: flex;
-  flex-direction: row;
-  width: 75vh;
-  height: 75vh;
-  background-color: rgb(226, 226, 226);
-  border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  padding: 5px;
-  /* Aplica la animación */
-  animation: grow-left-to-right 0.5s ease-in-out;
-  background-image: url("/IMG/Pokeball_minimalista.png");
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: slide-up 1s ease-in-out;
-}
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-    /* Empieza desde abajo */
-  }
-  to {
-    transform: translateY(0);
-    /* Llega hasta arriba */
-  }
-}
-
 @media (max-width: 1000px) {
   .Pokedex_Screen {
     display: grid;
@@ -9233,7 +9199,25 @@ input[type=radio]:checked:after {
   position: absolute;
   bottom: 45%;
 }
-@keyframes slide-up {
+.Pokedex_infoCard .Img_Bg {
+  position: absolute;
+  top: 17%;
+  z-index: 1;
+  width: 400px;
+  height: 200px;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .Pokedex_infoCard .Img_Bg {
+    margin-top: 65px;
+    margin-left: 0px;
+    position: absolute;
+    width: auto;
+    height: auto;
+  }
+}
+
+@keyframes grow-down-to-top {
   from {
     transform: scaleY(0);
   }
@@ -9256,7 +9240,6 @@ input[type=radio]:checked:after {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 50%;
   background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
@@ -9266,6 +9249,14 @@ input[type=radio]:checked:after {
 
 .Pokedex_Evo {
   background-color: rgb(255, 255, 255) !important;
+  align-items: center;
+}
+.Pokedex_Evo ul {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 !important;
 }
 
 .Pokedex_Moves {
@@ -9284,8 +9275,31 @@ input[type=radio]:checked:after {
   margin-right: 5px;
   justify-self: flex-start;
   border: solid 1px lightgray;
+  animation: grow-left-to-right 0.9s ease-in;
 }
 
+@keyframes grow-left-to-right {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (max-width: 800px) {
+  h2 {
+    margin: 10px;
+    font-size: 12px;
+  }
+  img {
+    display: block;
+    margin: 20px auto;
+  }
+  .Pokedex_List, .Pokedex_Moves {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .MenuBar {
   display: flex;
   flex-direction: row;
@@ -10803,6 +10817,21 @@ header a {
   .nav4 #ubicaciones:hover {
     display: none;
   }
+}
+
+.sidebar_P {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: -20px;
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 150px;
+  height: 100vh;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  border: 2px solid red;
 }
 
 /*Paleta de colores A*/

@@ -12,7 +12,6 @@
 
   <title>POKEDEX</title>
 </head>
-
 <body>
   <nav class="nav2">
     <a class="logo" title="Pokedex Icon">POKE_DEX<img src="/IMG/Pokeball_SinBg.png" width="50" /></a>
@@ -25,6 +24,9 @@
         <li><a href="https://github.com/0kev0/0Kev0.github.io">GitHub</a></li>
     </ul>
   </nav>
+  <sidebar class="sidebar_P">
+    <a onclick="openPopup()" class="logo" title="Pokedex Icon">Equipo<img src="/IMG/Pokeball_SinBg.png" width="50" /></a>
+  </sidebar>
 
     <!-- <div class="Pokedex_UnFolded" >
       <div class="Pokedex_Folded_Center">
@@ -122,6 +124,13 @@
 <script src="https://kit.fontawesome.com/66ad0f1cd6.js" crossorigin="anonymous"></script>
 <script src="pokemons.js"></script>
 <script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "block";
+  }
+  
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
   const btn = document.getElementById('abrir_folder');
   const ocultar = document.getElementById('ocultar');
   const ocultar2 = document.getElementById('cerrar_again');
