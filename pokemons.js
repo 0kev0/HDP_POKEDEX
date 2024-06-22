@@ -6,8 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const estd_pokemons = document.getElementById('estd_Pokemon');
     const Mov_pokemons = document.getElementById('Mov_Pokemon');
     const saveButton = document.getElementById('save-selection');
+    const addCompanionsButton = document.getElementById('add-companions');
+    const companionsContainer = document.getElementById('companions-container'); // Contenedor de acompañantes
     const maxSelection = 6;
+    const maxCompanions = 5;
     let selectedPokemons = [];
+    let selectedCompanions = [];
 
     function fetchPokemonList() {
         let promises = [];
@@ -35,22 +39,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const response = await fetch(url);
         const data = await response.json();
         const pokemonCard = document.createElement('div');
-        // const BG = document.createElement('img');
 
         pokemonCard.classList.add('pokemon-card');
         pokemonCard.dataset.index = index;
         pokemonCard.innerHTML = `
-                    <h2>${index}. ${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
-                    <img src="${data.sprites.front_default}" alt="${data.name}">
-                `;
-        // <p>Type: ${data.types.map(type => type.type.name).join(', ')}</p>
+            <h2>${index}. ${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
+            <img src="${data.sprites.front_default}" alt="${data.name}">
+        `;
+        
         pokemonCard.addEventListener('click', () => showPokemonDetails(data));
         pokemonCard.addEventListener('click', () => showPokemonIMG(data));
         pokemonCard.addEventListener('click', () => showPokemonSTATS(data));
         pokemonCard.addEventListener('click', () => showPokemonMOVES(data));
-
-        //Cambios importantes
         pokemonCard.addEventListener('click', () => togglePokemonSelection(data, pokemonCard));
+
         return { index, element: pokemonCard };
     }
 
@@ -79,28 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(evolutionData => {
                 const evolutions = getEvolutions(evolutionData.chain);
-                /*
-                    pokemonDetailsContainer.innerHTML = `
-                        <h2>${pokemon.id}. ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-                        <p>Type: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
-                        <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
-                        <p>Weight: ${pokemon.weight}</p>
-                        <p>Height: ${pokemon.height}</p>
-                        <p>Stats:</p>
-                        <ul>
-                            ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
-                        </ul>
-                        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-                        <h3>Moves:</h3>
-                        <ul>
-                            ${pokemon.moves.slice(0, 5).map(move => `<li>${move.move.name}</li>`).join('')}
-                        </ul>
-                        <h3>Evolutions:</h3>
-                        <ul>
-                            ${evolutions.map(evo => `<li>${evo}</li>`).join('')}
-                        </ul>
-                    `;
-                    */
                 showPokemons(evolutions);
             });
     }
@@ -111,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <img class="Img_Bg" src="IMG/PokeBg_Cortada (2).png" alt="fondo">    
         `;
     }
-
 
     function showPokemonMOVES(pokemon) {
         Mov_pokemons.innerHTML = `
@@ -129,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat} <input class="rangeimput_Stat" type="range" value="${stat.base_stat}" min="0" max="200" disabled ></li>`).join('')}
             </ul>`;
     }
-    
 
     function showPokemons(evolutions) {
         list_pokemons.innerHTML = `
@@ -140,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    //Cambios nuevos e importantes
     function togglePokemonSelection(pokemon, cardElement) {
         const isSelected = selectedPokemons.find(p => p.id === pokemon.id);
         if (isSelected) {
@@ -155,7 +132,32 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-    
+
+    function addCompanion(pokemon) {
+        const isAlreadySelected = selectedCompanions.find(p => p.id === pokemon.id);
+        if (!isAlreadySelected && selectedCompanions.length < maxCompanions) {
+            selectedCompanions.push(pokemon);
+            displayCompanions();
+        } else if (selectedCompanions.length >= maxCompanions) {
+            alert('Ya has seleccionado el máximo de acompañantes (5)');
+        } else {
+            alert('Este Pokémon ya está seleccionado como acompañante');
+        }
+    }
+
+    function displayCompanions() {
+        companionsContainer.innerHTML = '';
+        selectedCompanions.forEach(pokemon => {
+            const companionCard = document.createElement('div');
+            companionCard.classList.add('companion-card');
+            companionCard.innerHTML = `
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+                <p>${pokemon.name}</p>
+            `;
+            companionsContainer.appendChild(companionCard);
+        });
+    }
+
     function savePokemonSelection() {
         const entrenador = prompt('Ingresa el nombre del entrenador:');
         if (entrenador) {
@@ -166,54 +168,51 @@ document.addEventListener('DOMContentLoaded', function () {
                     id: pokemon.id,
                     name: pokemon.name,
                     image: pokemon.sprites.front_default
+                })),
+                "Acompañantes": selectedCompanions.map(pokemon => ({
+                    id: pokemon.id,
+                    name: pokemon.name,
+                    image: pokemon.sprites.front_default
                 }))
             };
-    
-            // Almacenar localmente los datos del entrenador
+
             let entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
-            
-            // Buscar si el entrenador ya existe
             const existingTrainerIndex = entrenadores.findIndex(t => t.nombre === entrenador);
-            
+
             if (existingTrainerIndex !== -1) {
-                // Actualizar el entrenador existente
                 entrenadores[existingTrainerIndex]["Lista Pokemones"] = trainerData["Lista Pokemones"];
+                entrenadores[existingTrainerIndex]["Acompañantes"] = trainerData["Acompañantes"];
             } else {
-                // Añadir un nuevo entrenador
                 entrenadores.push(trainerData);
             }
-    
+
             localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
-    
-            alert('Selección de Pokémon guardada localmente');
+
+            alert('Selección de Pokémon y acompañantes guardada localmente');
         }
     }
-    
+
     saveButton.addEventListener('click', savePokemonSelection);
+    addCompanionsButton.addEventListener('click', () => {
+        if (selectedPokemons.length > 0) {
+            const selectedPokemonIds = selectedPokemons.map(pokemon => pokemon.id);
+            fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+                .then(response => response.json())
+                .then(data => {
+                    data.results.forEach(pokemon => {
+                        if (selectedPokemonIds.includes(pokemon.id)) {
+                            fetchPokemonDetails(pokemon.url, pokemon.id)
+                                .then(pokemonCard => {
+                                    pokemonListContainer.appendChild(pokemonCard.element);
+                                    pokemonCard.element.addEventListener('click', () => addCompanion(pokemon));
+                                });
+                        }
+                    });
+                });
+        } else {
+            alert('Primero selecciona al menos un Pokémon en la Pokedex');
+        }
+    });
+
     fetchPokemonList();
 });
-
-
-// script.js
-
-function handleImgBgVisibility(mediaQuery) {
-    const imgBgElements = document.querySelectorAll('.Img_Bg');
-  
-    if (mediaQuery.matches) {
-      imgBgElements.forEach(el => {
-        el.style.display = 'none';
-      });
-    } else {
-      imgBgElements.forEach(el => {
-        el.style.display = '';
-      });
-    }
-  }
-  
-  // Define la media query
-  const mediaQuery = window.matchMedia('(max-width: 600px)');
-  
-  // Llama a la función al cargar la página y cuando cambia la media query
-  handleImgBgVisibility(mediaQuery);
-  mediaQuery.addListener(handleImgBgVisibility);
-  
