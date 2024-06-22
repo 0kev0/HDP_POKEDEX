@@ -15,6 +15,32 @@ body {
     width: 100vh;
 }
 
+.Dot_Rojo {
+    margin: 10px 0px 0px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    border: 3px solid #040404;
+  }
+  
+  .Dot_Verde {
+    margin: 10px 0px 0px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #00ff0d;
+    border-radius: 50%;
+    border: 3px solid #040404;
+  }
+  
+  .Dot_Amarillo {
+    margin: 10px 0px 0px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffee00;
+    border-radius: 50%;
+    border: 3px solid #040404;
+  }
 
 
 .Pokedex_UnFolded {
@@ -81,7 +107,17 @@ body {
     filter: grayscale(100%) brightness(0);
     width: 250px;
     height: 250px;
+    animation: rotar 2s linear;
 }
+
+@keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(1080deg); 
+    }
+  }
 
 .pokemon-color {
     width: 250px;

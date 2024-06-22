@@ -14,17 +14,17 @@
 </head>
 
 <body>
-  <nav class="nav2 navbar-responsive">
+  <nav class="nav2">
     <a class="logo" title="Pokedex Icon">POKE_DEX<img src="/IMG/Pokeball_SinBg.png" width="50" /></a>
     <ul>
       <li><a href="/index.html">Inicio</a></li>
-      <li><a href="/Doc.html">Documentacion</a></li>
+      <li><a href="/minijuego\Game.html">?</a></li>
       <li><a href="/abaut.html">Contacto</a></li>
-      <li><a href="/abaut.html">Equipos</a></li>
+      <li><a href="/entrenadores.html">Equipos</a></li>
 
         <li><a href="https://github.com/0kev0/0Kev0.github.io">GitHub</a></li>
-      </ul>
-    </nav>
+    </ul>
+  </nav>
 
     <!-- <div class="Pokedex_UnFolded" >
       <div class="Pokedex_Folded_Center">
@@ -49,7 +49,6 @@
       <div class="Pokedex_Folded_Center">
         <div class="triangulo"></div>
       </div>
-
       
     </div>
     
@@ -60,7 +59,7 @@
         
       </div>
       <div class="Pokedex_Screen">
-        <div class="Pokedex_List flex-column -center" style="overflow: scroll;" id="pokedex_list"></div>
+        <div class="Pokedex_List -center" style="overflow: scroll;" id="pokedex_list"></div>
         <div class="Pokedex_infoCard " id="img_Pokemon">
           
         </div>
@@ -74,8 +73,11 @@
         <div class="Pokedex_Moves flex-column padding-mediano txt-weight_md info_cartas" id="Mov_Pokemon"></div>
 
       </div>
-      
-      
+
+      <div class="seleccionar_pokemon">
+        <div id="selected-pokemons" class="selected-pokemons-container"></div>
+        <button id="save-selection">Guardar Selección</button>
+    </div>
     </div>
 
     
@@ -113,6 +115,7 @@
     </footer>
   </div>
 </body>
+
 <script src="Scripts/Animaciones.js"></script>
 <!-- <script src="Script.js"></script> -->
 <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
