@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat} <input class="rangeimput_Stat" type="range" value="${stat.base_stat}" min="0" max="200" disabled ></li>`).join('')}
             </ul>`;
     }
-    
 
     function showPokemons(evolutions) {
         list_pokemons.innerHTML = `
@@ -144,24 +143,21 @@ document.addEventListener('DOMContentLoaded', function () {
     function togglePokemonSelection(pokemon, cardElement) {
         const isSelected = selectedPokemons.find(p => p.id === pokemon.id);
         if (isSelected) {
-            // Si el Pokémon ya está seleccionado, no hacemos nada (no debería ocurrir según el contexto)
-            return;
+            selectedPokemons = selectedPokemons.filter(p => p.id !== pokemon.id);
+            cardElement.classList.remove('selected-pokemon-card');
         } else {
-            // Reemplazar el último Pokémon seleccionado con el nuevo
-            if (selectedPokemons.length > 0) {
-                const lastSelectedPokemon = selectedPokemons.pop(); // Sacamos el último pokémon de la lista
-                lastSelectedPokemon.cardElement.classList.remove('selected-pokemon-card'); // Quitamos la clase al último pokémon visualizado
-            }
-            selectedPokemons.push({
-                id: pokemon.id,
-                name: pokemon.name,
-                image: pokemon.sprites.front_default,
-                cardElement: cardElement // Guardamos el elemento de la carta para quitar la clase después
-            });
-            cardElement.classList.add('selected-pokemon-card'); // Añadimos la clase al pokémon visualizado actualmente
+            if (selectedPokemons.length < maxSelection) {
+                selectedPokemons.push({
+                    id: pokemon.id,
+                    name: pokemon.name,
+                    image: pokemon.sprites.front_default,
+                    cardElement: cardElement // Guardamos el elemento de la carta para quitar la clase después
+                });
+                cardElement.classList.add('selected-pokemon-card');
+            } 
         }
     }
-    
+
     function savePokemonSelection() {
         const entrenador = prompt('Ingresa el nombre del entrenador:');
         if (entrenador) {
@@ -169,27 +165,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Debes seleccionar al menos un Pokémon antes de guardar.');
                 return;
             }
-    
+
             const lastSelectedPokemon = selectedPokemons[selectedPokemons.length - 1]; // Obtener el último Pokémon seleccionado
-    
-            const trainerData = {
-                nombre: entrenador,
-                urlImagen: '', 
-                "Lista Pokemones": [{
-                    id: lastSelectedPokemon.id,
-                    name: lastSelectedPokemon.name,
-                    image: lastSelectedPokemon.image
-                }]
-            };
-    
+
             // Almacenar localmente los datos del entrenador
             let entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
-    
+
             // Buscar si el entrenador ya existe
             const existingTrainerIndex = entrenadores.findIndex(t => t.nombre === entrenador);
-    
+
             if (existingTrainerIndex !== -1) {
-                // El entrenador ya existe, agregar el último Pokémon seleccionado a su lista
+                // El entrenador ya existe, verificar si puede agregar más Pokémones
+                if (entrenadores[existingTrainerIndex]["Lista Pokemones"].length >= maxSelection) {
+                    alert('El entrenador ya tiene 6 Pokémon seleccionados.');
+                    return;
+                }
+                // Agregar el último Pokémon seleccionado a su lista
                 entrenadores[existingTrainerIndex]["Lista Pokemones"].push({
                     id: lastSelectedPokemon.id,
                     name: lastSelectedPokemon.name,
@@ -197,15 +188,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             } else {
                 // Añadir un nuevo entrenador con el último Pokémon seleccionado
-                entrenadores.push(trainerData);
+                entrenadores.push({
+                    nombre: entrenador,
+                    urlImagen: '', 
+                    "Lista Pokemones": [{
+                        id: lastSelectedPokemon.id,
+                        name: lastSelectedPokemon.name,
+                        image: lastSelectedPokemon.image
+                    }]
+                });
             }
-    
+
             localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
-    
+
             alert('Selección de Pokémon guardada localmente');
         }
-    }        
-    
+    }
+
     saveButton.addEventListener('click', savePokemonSelection);
     fetchPokemonList();
 });
@@ -230,4 +229,3 @@ function handleImgBgVisibility(mediaQuery) {
   // Llama a la función al cargar la página y cuando cambia la media query
   handleImgBgVisibility(mediaQuery);
   mediaQuery.addListener(handleImgBgVisibility);
-  
