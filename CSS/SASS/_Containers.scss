@@ -9,10 +9,17 @@
 
 }
 
-.Txt_overImg {}
 
 .container-regular {
-    height: 60vh;
+    height: auto;
+}
+
+.container_basic{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    overflow: hidden;
+    border: 2px solid red;
 }
 
 .container-fluid {

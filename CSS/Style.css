@@ -6617,7 +6617,15 @@
 }
 
 .container-regular {
-  height: 60vh;
+  height: auto;
+}
+
+.container_basic {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  overflow: hidden;
+  border: 2px solid red;
 }
 
 .container-fluid {
@@ -10832,6 +10840,25 @@ header a {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   border: 2px solid red;
+}
+
+@media screen and (max-width: 768px) {
+  .nav_responsive .nav2 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .nav_responsive .nav2 .logo {
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .nav_responsive .nav2 ul {
+    margin-top: 10px;
+  }
+  .nav_responsive .nav2 ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
 }
 
 /*Paleta de colores A*/

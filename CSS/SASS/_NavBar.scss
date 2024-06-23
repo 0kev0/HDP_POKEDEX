@@ -408,3 +408,27 @@ $color-secundario : rgb(112, 11, 151);
   overflow-y: auto;
   border: 2px solid red;
 }
+
+.nav_responsive{
+  @media screen and (max-width: 768px) {
+    .nav2 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px; 
+    }
+
+    .nav2 .logo {
+        margin-bottom: 10px;
+        align-items: center;
+    }
+
+    .nav2 ul {
+        margin-top: 10px;
+    }
+
+    .nav2 ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+}

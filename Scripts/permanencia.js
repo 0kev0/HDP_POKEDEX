@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             trainerElement.classList.add('trainer-card');
             trainerElement.innerHTML = `
                 <h2>${trainer.nombre}</h2>
-                <img src="${trainer.urlImagen}" alt="${trainer.nombre}">
+                <img src="/IMG/icono.png" alt="${trainer.nombre}">
                 <h3>Pokémon List:</h3>
                 <div class="pokemon-list">
                     ${trainer["Lista Pokemones"].map(pokemon => `
