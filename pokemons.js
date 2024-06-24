@@ -9,6 +9,62 @@ document.addEventListener('DOMContentLoaded', function () {
     const maxSelection = 6;
     let selectedPokemons = [];
 
+    let db;
+
+    // Inicia la base de datos IndexedDB
+    function initDB() {
+        const request = indexedDB.open('PokedexDB', 1);
+
+        request.onupgradeneeded = function(event) {
+            db = event.target.result;
+            const objectStore = db.createObjectStore('trainers', { keyPath: 'nombre' });
+            objectStore.createIndex('nombre', 'nombre', { unique: true });
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            loadTrainersFromDB();
+        };
+
+        request.onerror = function(event) {
+            console.error('Error opening IndexedDB:', event.target.errorCode);
+        };
+    }
+
+    // Guarda los datos de los entrenadores y Pokémon seleccionados en IndexedDB
+    function saveTrainerToDB(trainer) {
+        const transaction = db.transaction(['trainers'], 'readwrite');
+        const objectStore = transaction.objectStore('trainers');
+        const request = objectStore.put(trainer);
+
+        request.onsuccess = function() {
+            alert('Selección de Pokémon guardada localmente en IndexedDB');
+        };
+
+        request.onerror = function(event) {
+            console.error('Error saving trainer to IndexedDB:', event.target.errorCode);
+        };
+    }
+
+    // Carga los datos de los entrenadores desde IndexedDB
+    function loadTrainersFromDB() {
+        const transaction = db.transaction(['trainers'], 'readonly');
+        const objectStore = transaction.objectStore('trainers');
+        const request = objectStore.getAll();
+
+        request.onsuccess = function(event) {
+            const trainers = event.target.result;
+            trainers.forEach(trainer => {
+                console.log('Loaded trainer:', trainer);
+            });
+        };
+
+        request.onerror = function(event) {
+            console.error('Error loading trainers from IndexedDB:', event.target.errorCode);
+        };
+    }
+
+    // Función para obtener la lista de Pokémon de la API
     function fetchPokemonList() {
         let promises = [];
         for (let i = 1; i <= 151; i++) {
@@ -31,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
+    // Función para obtener los detalles de un Pokémon de la API
     async function fetchPokemonDetails(url, index) {
         const response = await fetch(url);
         const data = await response.json();
         const pokemonCard = document.createElement('div');
-        // const BG = document.createElement('img');
 
         pokemonCard.classList.add('pokemon-card');
         pokemonCard.dataset.index = index;
@@ -43,22 +99,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h2>${index}. ${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
                     <img src="${data.sprites.front_default}" alt="${data.name}">
                 `;
-        // <p>Type: ${data.types.map(type => type.type.name).join(', ')}</p>
         pokemonCard.addEventListener('click', () => showPokemonDetails(data));
         pokemonCard.addEventListener('click', () => showPokemonIMG(data));
         pokemonCard.addEventListener('click', () => showPokemonSTATS(data));
         pokemonCard.addEventListener('click', () => showPokemonMOVES(data));
 
-        //Cambios importantes
         pokemonCard.addEventListener('click', () => togglePokemonSelection(data, pokemonCard));
         return { index, element: pokemonCard };
     }
 
+    // Función para obtener la cadena evolutiva de un Pokémon
     function fetchEvolutionChain(url) {
         return fetch(url)
             .then(response => response.json());
     }
 
+    // Función para obtener las evoluciones de un Pokémon
     function getEvolutions(chain) {
         const evolutions = [];
         let currentChain = chain;
@@ -71,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return evolutions;
     }
 
+    // Función para mostrar los detalles de un Pokémon
     function showPokemonDetails(pokemon) {
         fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.id}/`)
             .then(response => response.json())
@@ -79,32 +136,11 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(evolutionData => {
                 const evolutions = getEvolutions(evolutionData.chain);
-                /*
-                    pokemonDetailsContainer.innerHTML = `
-                        <h2>${pokemon.id}. ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-                        <p>Type: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
-                        <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
-                        <p>Weight: ${pokemon.weight}</p>
-                        <p>Height: ${pokemon.height}</p>
-                        <p>Stats:</p>
-                        <ul>
-                            ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
-                        </ul>
-                        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-                        <h3>Moves:</h3>
-                        <ul>
-                            ${pokemon.moves.slice(0, 5).map(move => `<li>${move.move.name}</li>`).join('')}
-                        </ul>
-                        <h3>Evolutions:</h3>
-                        <ul>
-                            ${evolutions.map(evo => `<li>${evo}</li>`).join('')}
-                        </ul>
-                    `;
-                    */
                 showPokemons(evolutions);
             });
     }
 
+    // Función para mostrar la imagen de un Pokémon
     function showPokemonIMG(pokemon) {
         img_pokemon.innerHTML = `
             <img class="img_fix" src="${pokemon.sprites.front_default}" alt="${pokemon.name}">    
@@ -112,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-
+    // Función para mostrar los movimientos de un Pokémon
     function showPokemonMOVES(pokemon) {
         Mov_pokemons.innerHTML = `
             <h3>Moves:</h3>
@@ -122,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
+    // Función para mostrar las estadísticas de un Pokémon
     function showPokemonSTATS(pokemon) {
         estd_pokemons.innerHTML = `
             <p>Stats:</p>
@@ -130,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </ul>`;
     }
 
+    // Función para mostrar las evoluciones de un Pokémon
     function showPokemons(evolutions) {
         list_pokemons.innerHTML = `
             <h3>Evolutions:</h3>
@@ -139,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    //Cambios nuevos e importantes
+    // Función para seleccionar y deseleccionar Pokémon
     function togglePokemonSelection(pokemon, cardElement) {
         const isSelected = selectedPokemons.find(p => p.id === pokemon.id);
         if (isSelected) {
@@ -158,6 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Función para guardar la selección de Pokémon
     function savePokemonSelection() {
         const entrenador = prompt('Ingresa el nombre del entrenador:');
         if (entrenador) {
@@ -188,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             } else {
                 // Añadir un nuevo entrenador con el último Pokémon seleccionado
-                entrenadores.push({
+                const newTrainer = {
                     nombre: entrenador,
                     urlImagen: '', 
                     "Lista Pokemones": [{
@@ -196,7 +235,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         name: lastSelectedPokemon.name,
                         image: lastSelectedPokemon.image
                     }]
-                });
+                };
+                entrenadores.push(newTrainer);
+                saveTrainerToDB(newTrainer); // Guardar en IndexedDB
             }
 
             localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
@@ -207,25 +248,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     saveButton.addEventListener('click', savePokemonSelection);
     fetchPokemonList();
+    initDB(); // Iniciar la base de datos IndexedDB
 });
 
 function handleImgBgVisibility(mediaQuery) {
     const imgBgElements = document.querySelectorAll('.Img_Bg');
   
     if (mediaQuery.matches) {
-      imgBgElements.forEach(el => {
-        el.style.display = 'none';
-      });
+        imgBgElements.forEach(el => {
+            el.style.display = 'none';
+        });
     } else {
-      imgBgElements.forEach(el => {
-        el.style.display = '';
-      });
+        imgBgElements.forEach(el => {
+            el.style.display = '';
+        });
     }
-  }
-  
-  // Define la media query
-  const mediaQuery = window.matchMedia('(max-width: 600px)');
-  
-  // Llama a la función al cargar la página y cuando cambia la media query
-  handleImgBgVisibility(mediaQuery);
-  mediaQuery.addListener(handleImgBgVisibility);
+}
+
+// Define la media query
+const mediaQuery = window.matchMedia('(max-width: 600px)');
+
+// Llama a la función al cargar la página y cuando cambia la media query
+handleImgBgVisibility(mediaQuery);
+mediaQuery.addListener(handleImgBgVisibility);
