@@ -14791,4 +14791,89 @@ body .container-F .footer .footer-col .social-links a:hover {
 
 .emoji-cursor {
   cursor: url("/WhatsApp_Image_2024-04-30_at_9.34.35_PM-removebg-preview.png"), auto;
-}/*# sourceMappingURL=Style.css.map */
+}
+
+/*ESTILOS PARA LAS CARD DE STATS; MOVES Y EVO*/
+
+/* Estilos generales para las cartas de información */
+.info_cartas {
+  background-color: #f8f9fa; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  
+  padding: 20px; 
+  font-family: 'Arial', sans-serif; 
+  position: relative; 
+  overflow: hidden; 
+  border: 1px solid #ddd; 
+}
+
+/* Estilos específicos para las evoluciones */
+.Pokedex_Evo {
+  background-color: #e0f7fa; 
+  border-left: 5px solid #00acc1; 
+}
+
+.Pokedex_Evo::before {
+  content: '⚡'; /* Icono de evoluciones */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #00acc1;
+}
+
+/* Estilos específicos para los stats generales */
+.Pokedex_GeneralStats {
+  background-color: #fff3e0; 
+  border-left: 5px solid #ffb74d; 
+}
+
+.Pokedex_GeneralStats::before {
+  content: '📊'; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #ffb74d;
+}
+
+.Pokedex_infoCard {
+  background-color: #e8f5e9; 
+  border-left: 5px solid red; 
+}
+
+/* Estilos específicos para los movimientos */
+.Pokedex_Moves {
+  background-color: #e8f5e9; 
+  border-left: 5px solid #66bb6a; 
+}
+
+.Pokedex_Moves::before {
+  content: '🔥'; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #66bb6a;
+}
+
+/* Tamaño y estilo del texto */
+.txt-weight_md {
+  font-weight: 500; 
+  color: #333; 
+}
+
+/*Diseño borde interior*/
+.info_cartas::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(to right, #ff6f61, #ffb74d, #66bb6a, #00acc1);
+  border-radius: 2px 2px 0 0;
+}
+/*# sourceMappingURL=Style.css.map */
