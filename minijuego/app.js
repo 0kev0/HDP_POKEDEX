@@ -1,4 +1,6 @@
 let listaDePokemon = []; // Array para almacenar los Pokémon obtenidos
+let contadorIntentos = 0; // Contador de intentos
+const MAX_INTENTOS = 5; // Máximo número de intentos permitidos
 
 // Función para obtener la lista de Pokémon
 async function fetchPokemonList() {
@@ -74,15 +76,23 @@ function mostrarOpciones(opciones, pokemonCorrecto) {
 
 // Función para verificar la respuesta
 function verificarRespuesta(pokemonSeleccionado, pokemonCorrecto) {
+    contadorIntentos++; // Incrementa el contador de intentos
+    actualizarContadorIntentos(); // Actualiza la visualización del contador
+
     if (pokemonSeleccionado.nombre === pokemonCorrecto.nombre) {
-        alert('¡Correcto!');
+        mostrarAlerta('¡Correcto!', 'alerta-correcto');
         revelarPokemon(pokemonCorrecto);
         setTimeout(iniciarJuego, 3000);
     } else {
-        alert('Incorrecto, prueba de nuevo.');
+        mostrarAlerta('Incorrecto, prueba de nuevo.', 'alerta-incorrecto');
+        revelarPokemon(pokemonCorrecto);
         setTimeout(iniciarJuego, 1000);
     }
-     
+
+    if (contadorIntentos >= MAX_INTENTOS) {
+        document.getElementById('contador-intentos').innerText= "No mas intentos, se acabo el juego"
+        setTimeout(resetGame,3000);
+    }
 }
 
 // Función para revelar el Pokémon
@@ -95,6 +105,26 @@ function revelarPokemon(pokemon) {
     }, 3000);
 }
 
+// Función para actualizar la visualización del contador de intentos
+function actualizarContadorIntentos() {
+    const contadorElemento = document.getElementById('contador-intentos');
+    contadorElemento.innerText = `Intentos: ${contadorIntentos}`;
+}
+
+// Función para mostrar una alerta
+function mostrarAlerta(mensaje, tipo) {
+    const alerta = document.createElement('div');
+    alerta.textContent = mensaje;
+    alerta.classList.add('alerta', tipo);
+
+    const gameContainer = document.getElementById('game-container');
+    gameContainer.appendChild(alerta);
+
+    setTimeout(() => {
+        alerta.remove();
+    }, 2000);
+}
+
 // Función para iniciar el juego
 async function iniciarJuego() {
     const pokedexUnfolded = document.getElementById('pokedex-unfolded');
@@ -103,19 +133,13 @@ async function iniciarJuego() {
     pokedexUnfolded.style.display = 'flex';
     document.getElementById('game-container').style.display = 'block';
 
-    //REPRODUCIR SONIDO
+    // REPRODUCIR SONIDO
     const backgroundMusic = document.getElementById('background-music');
-
-        
-        backgroundMusic.addEventListener('ended', function() {
-            
-            this.currentTime = 0; 
-            this.play(); 
-        });
-
-        
+    backgroundMusic.addEventListener('ended', function() {
+        this.currentTime = 0; 
+        this.play(); 
+    });
     backgroundMusic.play();
-
 
     if (listaDePokemon.length === 0) {
         listaDePokemon = await fetchPokemonList();
@@ -126,9 +150,21 @@ async function iniciarJuego() {
     mostrarOpciones(opciones, pokemonCorrecto);
 }
 
+// Función para reiniciar el juego
+function resetGame() {
+    contadorIntentos = 0; // Reinicia el contador de intentos
+    actualizarContadorIntentos(); // Actualiza la visualización del contador
+    iniciarJuego(); // Inicia un nuevo juego
+}
+
 // Inicia el juego al cargar la página
 window.onload = function() {
-    
+    actualizarContadorIntentos(); // Actualiza la visualización del contador al cargar la página
+    iniciarJuego(); // Inicia el juego automáticamente
 };
 
-
+// Evento click para reiniciar el juego
+const restartButton = document.getElementById('restart');
+restartButton.addEventListener('click', function() {
+    resetGame();
+});

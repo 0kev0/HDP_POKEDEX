@@ -12,7 +12,6 @@
 
   <title>POKEDEX</title>
 </head>
-
 <body>
   <nav class="nav2">
     <a class="logo" title="Pokedex Icon">POKE_DEX<img src="/IMG/Pokeball_SinBg.png" width="50" /></a>
@@ -25,19 +24,9 @@
         <li><a href="https://github.com/0kev0/0Kev0.github.io">GitHub</a></li>
     </ul>
   </nav>
-
-    <!-- <div class="Pokedex_UnFolded" >
-      <div class="Pokedex_Folded_Center">
-        <div class="triangulo" id="cerrar_again"></div>
-      </div>
-      <div class="Pokedex_Screen">
-        <div class="Pokedex_List flex-column -center" style="overflow: scroll;" ></div>
-        <div class="Pokedex_rest info_cartas" id="pokemon-details"></div>
-        <div class="Pokedex_infoCard">Tarjeta info</div>
-        <div class="Pokedex_Stats">estadisticas</div>
-        <div class="Pokedex_Moves">movimientos</div> 
-      </div>
-    </div> -->
+  <sidebar class="sidebar_P">
+    <a onclick="openPopup()" class="logo" title="Pokedex Icon">Equipo<img src="/IMG/Pokeball_SinBg.png" width="50" /></a>
+  </sidebar>
 
     <div class="Pokedex_Folded" id="ocultar">
       <div class="Pokedex_Folded_top">
@@ -77,10 +66,11 @@
       <div class="seleccionar_pokemon">
         <div id="selected-pokemons" class="selected-pokemons-container"></div>
         <button id="save-selection">Guardar Selección</button>
+        <button class=" boton-primario" id="add-companions">Agregar Acompañantes</button>
     </div>
     </div>
 
-    
+    <div id="companions-container" class="companions-container"></div>
 
 
   <div class="cell-footer">
