@@ -80,12 +80,31 @@
             cursor: pointer;
             font-size: 14px;
         }
-    
+
         .delete-button:hover {
             background-color: #ff1f1f;
         }
-    
+
         .delete-button:focus {
+            outline: none;
+        }
+
+        .clear-all-button {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .clear-all-button:hover {
+            background-color: #ff1f1f;
+        }
+
+        .clear-all-button:focus {
             outline: none;
         }
     </style>
@@ -95,13 +114,42 @@
 
     <div class="container">
         <div id="trainers-pokemon-list"></div>
-        
+        <button class="clear-all-button" id="clear-all">Eliminar todos los entrenadores</button>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('trainers-pokemon-list');
+            const clearAllButton = document.getElementById('clear-all');
             let entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
-    
+            let db;
+
+            function initDB() {
+                const request = indexedDB.open('PokedexDB', 1);
+
+                request.onsuccess = function(event) {
+                    db = event.target.result;
+                };
+
+                request.onerror = function(event) {
+                    console.error('Error opening IndexedDB:', event.target.errorCode);
+                };
+            }
+
+            function deleteAllTrainersFromDB() {
+                const transaction = db.transaction(['trainers'], 'readwrite');
+                const objectStore = transaction.objectStore('trainers');
+                const request = objectStore.clear();
+
+                request.onsuccess = function() {
+                    console.log('All trainers cleared from IndexedDB');
+                };
+
+                request.onerror = function(event) {
+                    console.error('Error clearing trainers from IndexedDB:', event.target.errorCode);
+                };
+            }
+
             function renderTrainers() {
                 container.innerHTML = ''; // Limpiar el contenido anterior
                 entrenadores.forEach((trainer, index) => {
@@ -125,7 +173,7 @@
                 });
                 setupDeleteButtons();
             }
-    
+
             function setupDeleteButtons() {
                 const deleteButtons = document.querySelectorAll('.delete-button');
                 deleteButtons.forEach(button => {
@@ -141,10 +189,21 @@
                     });
                 });
             }
-    
+
+            clearAllButton.addEventListener('click', function() {
+                // Limpiar del localStorage
+                localStorage.removeItem('entrenadores');
+                entrenadores = [];
+                // Limpiar de IndexedDB
+                deleteAllTrainersFromDB();
+                // Limpiar el HTML
+                renderTrainers();
+            });
+
             renderTrainers();
+            initDB(); // Iniciar la base de datos IndexedDB
         });
     </script>
-    
+
 </body>
 </html>

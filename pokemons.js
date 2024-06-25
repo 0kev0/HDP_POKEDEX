@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const trainers = event.target.result;
             trainers.forEach(trainer => {
                 console.log('Loaded trainer:', trainer);
+                // Aquí puedes agregar lógica para mostrar los entrenadores cargados en la UI
             });
         };
 
@@ -205,8 +206,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            const lastSelectedPokemon = selectedPokemons[selectedPokemons.length - 1]; // Obtener el último Pokémon seleccionado
-
             // Almacenar localmente los datos del entrenador
             let entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
 
@@ -215,32 +214,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (existingTrainerIndex !== -1) {
                 // El entrenador ya existe, verificar si puede agregar más Pokémones
-                if (entrenadores[existingTrainerIndex]["Lista Pokemones"].length >= maxSelection) {
+                if (entrenadores[existingTrainerIndex]["Lista Pokemones"].length + selectedPokemons.length > maxSelection) {
                     alert('El entrenador ya tiene 6 Pokémon seleccionados.');
                     return;
                 }
-                // Agregar el último Pokémon seleccionado a su lista
-                entrenadores[existingTrainerIndex]["Lista Pokemones"].push({
-                    id: lastSelectedPokemon.id,
-                    name: lastSelectedPokemon.name,
-                    image: lastSelectedPokemon.image
+                // Agregar los Pokémon seleccionados a su lista
+                selectedPokemons.forEach(pokemon => {
+                    entrenadores[existingTrainerIndex]["Lista Pokemones"].push({
+                        id: pokemon.id,
+                        name: pokemon.name,
+                        image: pokemon.image
+                    });
                 });
             } else {
-                // Añadir un nuevo entrenador con el último Pokémon seleccionado
-                const newTrainer = {
+                // Añadir un nuevo entrenador con la lista de Pokémon seleccionados
+                entrenadores.push({
                     nombre: entrenador,
                     urlImagen: '', 
-                    "Lista Pokemones": [{
-                        id: lastSelectedPokemon.id,
-                        name: lastSelectedPokemon.name,
-                        image: lastSelectedPokemon.image
-                    }]
-                };
-                entrenadores.push(newTrainer);
-                saveTrainerToDB(newTrainer); // Guardar en IndexedDB
+                    "Lista Pokemones": selectedPokemons.map(pokemon => ({
+                        id: pokemon.id,
+                        name: pokemon.name,
+                        image: pokemon.image
+                    }))
+                });
             }
 
             localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
+
+            // Guardar en IndexedDB
+            const trainerToSave = entrenadores.find(t => t.nombre === entrenador);
+            saveTrainerToDB(trainerToSave);
 
             alert('Selección de Pokémon guardada localmente');
         }
@@ -253,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function handleImgBgVisibility(mediaQuery) {
     const imgBgElements = document.querySelectorAll('.Img_Bg');
-  
+
     if (mediaQuery.matches) {
         imgBgElements.forEach(el => {
             el.style.display = 'none';
