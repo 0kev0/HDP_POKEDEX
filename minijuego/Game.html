@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="IMG/favicon.ico" />
+  <link rel="icon" href="IMG/favicon.ico" />
+
     <link rel="stylesheet" href="Styles2.css" />
     <title>Adivina el Pokémon</title>
   </head>
@@ -19,6 +21,7 @@
         <p>Haz clic para empezar el juego</p>
       </div>
       <div class="Pokedex_UnFolded" id="pokedex-unfolded">
+        <div id="contador-intentos" class="contador">Intentos: 0</div>
         <div id="game-container" class="game-container">
           <img
             id="pokemon-sombra"
@@ -27,7 +30,12 @@
             alt=" "
           />
         </div>
+        <div class="retro">
+          <div id="restart" class="Dot_Verde"></div>
         <div id="opciones" class="opciones"></div>
+        </div>
+        <br><br>
+        <div id="alerta" class="alert"></div>
       </div>
     </div>
 
