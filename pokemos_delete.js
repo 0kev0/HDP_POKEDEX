@@ -30,6 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    function deleteTrainerFromDB(trainerName) {
+        const transaction = db.transaction(['trainers'], 'readwrite');
+        const objectStore = transaction.objectStore('trainers');
+        const request = objectStore.delete(trainerName);
+
+        request.onsuccess = function() {
+            console.log(`Trainer ${trainerName} deleted from IndexedDB`);
+        };
+
+        request.onerror = function(event) {
+            console.error('Error deleting trainer from IndexedDB:', event.target.errorCode);
+        };
+    }
+
     function deletePokemonFromDB(trainerName, pokemonName) {
         const transaction = db.transaction(['trainers'], 'readwrite');
         const objectStore = transaction.objectStore('trainers');
@@ -63,7 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const trainerElement = document.createElement('div');
             trainerElement.classList.add('trainer-card');
             trainerElement.innerHTML = `
-                <h2>${trainer.nombre}</h2>
+                <div class="trainer-header">
+                    <h2>${trainer.nombre}</h2>
+                    <button class="clear-all-button delete-trainer-button" data-trainer-index="${index}">Eliminar Entrenador</button>
+                </div>
                 <img src="${trainer.urlImagen}" alt="${trainer.nombre}">
                 <h3>Pokémon List:</h3>
                 <div class="pokemon-list">
@@ -79,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
             container.appendChild(trainerElement);
         });
         setupDeleteButtons();
+        setupDeleteTrainerButtons();
     }
 
     function setupDeleteButtons() {
@@ -96,6 +114,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
                 // Eliminar de IndexedDB
                 deletePokemonFromDB(trainerName, pokemonName);
+                // Renderizar de nuevo los entrenadores
+                renderTrainers();
+            });
+        });
+    }
+
+    function setupDeleteTrainerButtons() {
+        const deleteTrainerButtons = document.querySelectorAll('.delete-trainer-button');
+        deleteTrainerButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const trainerIndex = parseInt(button.dataset.trainerIndex);
+                const trainerName = entrenadores[trainerIndex].nombre;
+
+                // Eliminar el entrenador del array
+                entrenadores.splice(trainerIndex, 1);
+                // Actualizar en el almacenamiento local
+                localStorage.setItem('entrenadores', JSON.stringify(entrenadores));
+                // Eliminar de IndexedDB
+                deleteTrainerFromDB(trainerName);
                 // Renderizar de nuevo los entrenadores
                 renderTrainers();
             });
