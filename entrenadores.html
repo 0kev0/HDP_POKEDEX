@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="IMG/favicon.ico" />
+    
     <title>Entrenadores y sus Pokémon</title>
     <style>
         body {
@@ -71,15 +73,41 @@
             border-radius: 50%;
         }
 
-        #clearButton {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
+        .delete-button {
             background-color: #ff4c4c;
             color: white;
             border: none;
             border-radius: 4px;
+            padding: 5px 10px;
             cursor: pointer;
+            font-size: 14px;
+        }
+
+        .delete-button:hover {
+            background-color: #ff1f1f;
+        }
+
+        .delete-button:focus {
+            outline: none;
+        }
+
+        .clear-all-button {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .clear-all-button:hover {
+            background-color: #ff1f1f;
+        }
+
+        .clear-all-button:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -88,44 +116,10 @@
 
     <div class="container">
         <div id="trainers-pokemon-list"></div>
-        <button id="clearButton">Limpiar Lista de Entrenadores</button>
+        <button class="clear-all-button" id="clear-all">Eliminar todos los entrenadores</button>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('trainers-pokemon-list');
-            const entrenadores = JSON.parse(localStorage.getItem('entrenadores')) || [];
+    <script src="/Scripts/permanencia.js"></script>
+    <script src="/pokemos_delete.js"></script>
 
-            function renderTrainers() {
-                container.innerHTML = ''; // Limpiar el contenido anterior
-                entrenadores.forEach(trainer => {
-                    const trainerElement = document.createElement('div');
-                    trainerElement.classList.add('trainer-card');
-                    trainerElement.innerHTML = `
-                        <h2>${trainer.nombre}</h2>
-                        <img src="${trainer.urlImagen}" alt="${trainer.nombre}">
-                        <h3>Pokémon List:</h3>
-                        <div class="pokemon-list">
-                            ${trainer["Lista Pokemones"].map(pokemon => `
-                                <div>
-                                    <h4>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h4>
-                                    <img src="${pokemon.image}" alt="${pokemon.name}">
-                                </div>
-                            `).join('')}
-                        </div>
-                    `;
-                    container.appendChild(trainerElement);
-                });
-            }
-
-            renderTrainers();
-
-            const clearButton = document.getElementById('clearButton');
-            clearButton.addEventListener('click', function() {
-                localStorage.removeItem('entrenadores'); // Limpiar el localStorage
-                container.innerHTML = ''; // Limpiar la vista
-                alert('Lista de entrenadores limpiada');
-            });
-        });
-    </script>
 </body>
 </html>

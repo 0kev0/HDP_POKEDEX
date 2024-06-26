@@ -6617,7 +6617,15 @@
 }
 
 .container-regular {
-  height: 60vh;
+  height: auto;
+}
+
+.container_basic {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  overflow: hidden;
+  border: 2px solid red;
 }
 
 .container-fluid {
@@ -9059,40 +9067,6 @@ input[type=radio]:checked:after {
   animation: grow-left-to-right 0.5s ease-in-out;
 }
 
-/* Estilos para el div .Pokedex_Screen2 COPIA DE POKEDEX SCREEN*/
-.Pokedex_Screen2 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  display: flex;
-  flex-direction: row;
-  width: 75vh;
-  height: 75vh;
-  background-color: rgb(226, 226, 226);
-  border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  padding: 5px;
-  /* Aplica la animación */
-  animation: grow-left-to-right 0.5s ease-in-out;
-  background-image: url("/IMG/Pokeball_minimalista.png");
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: slide-up 1s ease-in-out;
-}
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-    /* Empieza desde abajo */
-  }
-  to {
-    transform: translateY(0);
-    /* Llega hasta arriba */
-  }
-}
-
 @media (max-width: 1000px) {
   .Pokedex_Screen {
     display: grid;
@@ -9233,7 +9207,25 @@ input[type=radio]:checked:after {
   position: absolute;
   bottom: 45%;
 }
-@keyframes slide-up {
+.Pokedex_infoCard .Img_Bg {
+  position: absolute;
+  top: 17%;
+  z-index: 1;
+  width: 400px;
+  height: 200px;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .Pokedex_infoCard .Img_Bg {
+    margin-top: 65px;
+    margin-left: 0px;
+    position: absolute;
+    width: auto;
+    height: auto;
+  }
+}
+
+@keyframes grow-down-to-top {
   from {
     transform: scaleY(0);
   }
@@ -9256,7 +9248,6 @@ input[type=radio]:checked:after {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 50%;
   background-color: rgb(255, 255, 255) !important;
   border-radius: 10px;
   margin-right: 5px;
@@ -9266,6 +9257,14 @@ input[type=radio]:checked:after {
 
 .Pokedex_Evo {
   background-color: rgb(255, 255, 255) !important;
+  align-items: center;
+}
+.Pokedex_Evo ul {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 !important;
 }
 
 .Pokedex_Moves {
@@ -9284,8 +9283,31 @@ input[type=radio]:checked:after {
   margin-right: 5px;
   justify-self: flex-start;
   border: solid 1px lightgray;
+  animation: grow-left-to-right 0.9s ease-in;
 }
 
+@keyframes grow-left-to-right {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (max-width: 800px) {
+  h2 {
+    margin: 10px;
+    font-size: 12px;
+  }
+  img {
+    display: block;
+    margin: 20px auto;
+  }
+  .Pokedex_List, .Pokedex_Moves {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .MenuBar {
   display: flex;
   flex-direction: row;
@@ -10802,6 +10824,40 @@ header a {
   }
   .nav4 #ubicaciones:hover {
     display: none;
+  }
+}
+
+.sidebar_P {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: -20px;
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 150px;
+  height: 100vh;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  border: 2px solid red;
+}
+
+@media screen and (max-width: 768px) {
+  .nav_responsive .nav2 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .nav_responsive .nav2 .logo {
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .nav_responsive .nav2 ul {
+    margin-top: 10px;
+  }
+  .nav_responsive .nav2 ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 }
 
@@ -14791,4 +14847,89 @@ body .container-F .footer .footer-col .social-links a:hover {
 
 .emoji-cursor {
   cursor: url("/WhatsApp_Image_2024-04-30_at_9.34.35_PM-removebg-preview.png"), auto;
-}/*# sourceMappingURL=Style.css.map */
+}
+
+/*ESTILOS PARA LAS CARD DE STATS; MOVES Y EVO*/
+
+/* Estilos generales para las cartas de información */
+.info_cartas {
+  background-color: #f8f9fa; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  
+  padding: 20px; 
+  font-family: 'Arial', sans-serif; 
+  position: relative; 
+  overflow: hidden; 
+  border: 1px solid #ddd; 
+}
+
+/* Estilos específicos para las evoluciones */
+.Pokedex_Evo {
+  background-color: #e0f7fa; 
+  border-left: 5px solid #00acc1; 
+}
+
+.Pokedex_Evo::before {
+  content: '⚡'; /* Icono de evoluciones */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #00acc1;
+}
+
+/* Estilos específicos para los stats generales */
+.Pokedex_GeneralStats {
+  background-color: #fff3e0; 
+  border-left: 5px solid #ffb74d; 
+}
+
+.Pokedex_GeneralStats::before {
+  content: '📊'; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #ffb74d;
+}
+
+.Pokedex_infoCard {
+  background-color: #e8f5e9; 
+  border-left: 5px solid red; 
+}
+
+/* Estilos específicos para los movimientos */
+.Pokedex_Moves {
+  background-color: #e8f5e9; 
+  border-left: 5px solid #66bb6a; 
+}
+
+.Pokedex_Moves::before {
+  content: '🔥'; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #66bb6a;
+}
+
+/* Tamaño y estilo del texto */
+.txt-weight_md {
+  font-weight: 500; 
+  color: #333; 
+}
+
+/*Diseño borde interior*/
+.info_cartas::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(to right, #ff6f61, #ffb74d, #66bb6a, #00acc1);
+  border-radius: 2px 2px 0 0;
+}
+/*# sourceMappingURL=Style.css.map */
