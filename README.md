@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="IMG/Pokeball_SinBg.png" alt="Descripción de la imagen">
+  <img src="IMG/Pokeball_SinBg.png" alt="Descripción de la imagen" width="400" height="350">
 </div>
 
 
