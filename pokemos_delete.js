@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             trainerElement.innerHTML = `
                 <div class="trainer-header">
                     <h2>${trainer.nombre}</h2>
-                    <button class="clear-all-button delete-trainer-button" data-trainer-index="${index}">Eliminar Entrenador</button>
+                    <button class="button_animated_Th2 clear-all-button delete-trainer-button" data-trainer-index="${index}">Eliminar Entrenador</button>
                 </div>
                 <img src="${trainer.urlImagen}" alt="${trainer.nombre}">
                 <h3>Pokémon List:</h3>
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div>
                             <h4>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h4>
                             <img src="${pokemon.image}" alt="${pokemon.name}">
-                            <button class="delete-button" data-trainer-index="${index}" data-pokemon-index="${pokemonIndex}">Eliminar</button>
+                            <button class="button_animated_Th2 delete-button" data-trainer-index="${index}" data-pokemon-index="${pokemonIndex}">Eliminar</button>
                         </div>
                     `).join('')}
                 </div>

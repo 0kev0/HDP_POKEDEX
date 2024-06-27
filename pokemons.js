@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Añadir un nuevo entrenador con la lista de Pokémon seleccionados
                 entrenadores.push({
                     nombre: entrenador,
-                    urlImagen: '', 
+                    urlImagen: '/IMG/Pokeball_SinBg.png', 
                     "Lista Pokemones": [{
                         id: selectedPokemon.id,
                         name: selectedPokemon.name,
