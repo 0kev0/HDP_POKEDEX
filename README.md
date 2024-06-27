@@ -4,6 +4,15 @@
 
 La Pokédex es una aplicación que permite a los usuarios buscar y ver información detallada sobre diferentes Pokémon. La aplicación utiliza la API de PokeAPI para obtener los datos necesarios sobre cada Pokémon, incluyendo su nombre, tipo, habilidades, estadísticas y más.
 
+# Desearrollado por:
+## Integrantes
+ - Ángel Jesús Carcamo Medrano Carnet: CM22013 
+ - Diego Jose Morataya Chavez Carnet: MC2119 
+ - Kevin Israel Rodriguez Rivera Carnet: RR19018 
+ - Rafael Humberto Lino Lovo Carnet: LL22017
+ - Angel Osmin Ramirez Berrios Carnet: RB21025 
+
+
 ## Características
 
 - Buscar Pokémon por nombre o número de Pokédex.
@@ -73,19 +82,7 @@ La aplicación estará disponible en `http://localhost:3000`.
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-## Contacto
 
-Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo:
-
-## Integrantes
- - Ángel Jesús Carcamo Medrano Carnet: CM22013 
- - Diego Jose Morataya Chavez Carnet: MC2119 
- - Kevin Israel Rodriguez Rivera Carnet: RR19018 
- - Rafael Humberto Lino Lovo Carnet: LL22017
- - Angel Osmin Ramirez Berrios Carnet: RB21025 
-
-- **Correo electrónico:** tu-email@example.com
-- **GitHub:** [tu-usuario](https://github.com/tu-usuario)
 
 ---
 
