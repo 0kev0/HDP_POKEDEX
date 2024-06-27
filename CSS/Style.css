@@ -2167,6 +2167,11 @@
   visibility: visible;
 }
 
+.trainer-card img {
+  width: 100px !important;
+  height: 100px !important;
+}
+
 .tarjeta {
   position: relative;
   width: 300px;
