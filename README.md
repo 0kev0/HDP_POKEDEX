@@ -5,7 +5,6 @@
 La Pokédex es una aplicación que permite a los usuarios buscar y ver información detallada sobre diferentes Pokémon. La aplicación utiliza la API de PokeAPI para obtener los datos necesarios sobre cada Pokémon, incluyendo su nombre, tipo, habilidades, estadísticas y más.
 
 # Desearrollado por:
-## Integrantes
  - Ángel Jesús Carcamo Medrano Carnet: CM22013 
  - Diego Jose Morataya Chavez Carnet: MC2119 
  - Kevin Israel Rodriguez Rivera Carnet: RR19018 
