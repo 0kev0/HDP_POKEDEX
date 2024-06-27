@@ -77,6 +77,15 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo:
 
+
+## Integrantes
+
+Angel Jesus Carcamo Medrano Carnet: CM22013
+Diego Jose Morataya Chavez Carnet: MC21119
+Kevin Israel Rodriguez Rivera: RR19018
+Rafael Humberto Lino Lovo: LL22017
+Angel Osmin Ramirez Berrios: RB21025
+
 - **Correo electrónico:** tu-email@example.com
 - **GitHub:** [tu-usuario](https://github.com/tu-usuario)
 
