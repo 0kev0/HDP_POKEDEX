@@ -4,30 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="IMG/favicon.ico" />
+  <link rel="stylesheet" href="CSS/reset.css" />  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />  
+    <link rel="stylesheet" href="DripCSS/CSS/Style.css" />  
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>  
+    <title>Documentacion</title>  
+    <title>Abut</title></head>
+    <link rel="stylesheet" href="CSS/reset.css" />
+  <link rel="stylesheet" href="CSS/Style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     
     <title>Entrenadores y sus Pokémon</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
         .trainer-card {
             margin-bottom: 20px;
             padding: 10px;
@@ -73,43 +64,6 @@
             border-radius: 50%;
         }
 
-        .delete-button {
-            background-color: #ff4c4c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .delete-button:hover {
-            background-color: #ff1f1f;
-        }
-
-        .delete-button:focus {
-            outline: none;
-        }
-
-        .clear-all-button {
-            background-color: #ff4c4c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-
-        .clear-all-button:hover {
-            background-color: #ff1f1f;
-        }
-
-        .clear-all-button:focus {
-            outline: none;
-        }
-
         .trainer-header {
             display: flex;
             justify-content: space-between;
@@ -117,15 +71,58 @@
         }
         
     </style>
+
+    <nav class="nav2">
+        <a class="logo" title="Pokedex Icon">POKE_DEX<img src="/IMG/Pokeball_SinBg.png" width="50" /></a>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/minijuego\Game.html">?</a></li>
+          <li><a href="/abaut.html">Contacto</a></li>
+          <li><a href="/entrenadores.html">Equipos</a></li>
+    
+        </ul>
+    </nav>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container-fluid">
         <div id="trainers-pokemon-list"></div>
-        <button class="clear-all-button" id="clear-all">Eliminar todos los entrenadores</button>
+        <button class="button_animated_Th2 clear-all-button" id="clear-all">Eliminar todos los entrenadores</button>
     </div>
     <script src="/Scripts/permanencia.js"></script>
     <script src="/pokemos_delete.js"></script>
+
+    <div class="cell-footer">
+        <footer class="pie-pagina plta-dos-backgraund-B">
+          <div class="grupo-1">
+            <div class="Fother-box">
+              <figure>
+                <a href="#">
+                  <a href="https://vectorified.com/pokedex-icon" title="Pokedex Icon"><img src="/IMG/Pokeball_SinBg.png"
+                      width="350" /></a>
+                </a>
+              </figure>
+            </div>
+            <div class="Fother-box">
+              <h2>Universidad de el Salvador</h2>
+              <p>Departamento de Ingenieria y Arquitectura</p>
+              <p>Ingenieria de Sistemas Informaticos</p>
+            </div>
+            <div class="Fother-box">
+              <h2>SIGUENOS</h2>
+              <div class="red-social">
+                <a id="fb" href="#" class="fa fa-facebook fb"></a>
+                <a id="ig" href="#" class="fa fa-instagram"></a>
+                <a id="tw" href="#" class="fa fa-twitter"></a>
+                <a id="yt" href="https://youtu.be/dQw4w9WgXcQ" class="fa fa-youtube"></a>
+              </div>
+            </div>
+          </div>
+          <div class="grupo-2">
+            <small>&copy; 2024 <b>Drip.css</b> - Todos los Derechos Reservados.</small>
+          </div>
+        </footer>
+      </div>
 </body>
 </html>
