@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para obtener la lista de Pokémon de la API
     function fetchPokemonList() {
         let promises = [];
-        for (let i = 1; i <= 151; i++) {
+        for (let i = 1; i <= 150; i++) {
             const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             promises.push(fetchPokemonDetails(url, i));
         }
@@ -94,11 +94,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = await response.json();
         const pokemonCard = document.createElement('div');
 
+        const animatedSpriteUrl = data.sprites.versions['generation-v']['black-white'].animated.front_default;
+        const spriteUrl = animatedSpriteUrl || data.sprites.front_default;
+
         pokemonCard.classList.add('pokemon-card');
         pokemonCard.dataset.index = index;
         pokemonCard.innerHTML = `
             <h2>${index}. ${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
-            <img src="${data.sprites.front_default}" alt="${data.name}">
+            <img src="${spriteUrl}" alt="${data.name}">
         `;
         pokemonCard.addEventListener('click', () => showPokemonDetails(data));
         pokemonCard.addEventListener('click', () => showPokemonIMG(data));
@@ -144,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para mostrar la imagen de un Pokémon
     function showPokemonIMG(pokemon) {
         img_pokemon.innerHTML = `
-            <img class="img_fix" src="${pokemon.sprites.front_default}" alt="${pokemon.name}">    
+            <img class="img_fix" src="${pokemon.sprites.versions['generation-v']['black-white'].animated.front_default || pokemon.sprites.front_default}" alt="${pokemon.name}">    
             <img class="Img_Bg" src="IMG/PokeBg_Cortada (2).png" alt="fondo">    
         `;
     }
