@@ -2,6 +2,11 @@
 
 //************************************** Tarejetas **************************************//
 //*Tarjeta 1*//
+.trainer-card img {
+    width: 100px !important;
+    height: 100px !important;
+}
+
 .tarjeta {
     position: relative;
     width: 300px;
@@ -147,7 +152,7 @@
             position: absolute;
             width: 350px;
             height: 200px;
-            background: linear-gradient(to right, #5e2066, #b332c7);
+            background: linear-gradient(to right, rgb(149,1,1), rgb(255,0,0));
             transform: rotate(-35deg);
             top: -90px;
             left: -150px;
