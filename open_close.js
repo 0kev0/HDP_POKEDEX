@@ -1,4 +1,4 @@
-export default class ToggleButton {
+/*export default class ToggleButton {
     constructor() {
         this.btn = document.getElementById('abrir_folder');
         this.ocultar = document.getElementById('ocultar');
@@ -37,3 +37,4 @@ export default class ToggleButton {
         this.ocultar2.removeEventListener('click', this.ocultar2ClickHandler);
     }
 }
+*/
