@@ -2142,6 +2142,23 @@
   width: 18vh;
 }
 
+#save-selection {
+  background-color: rgb(157, 9, 9);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#save-selection:hover {
+  background-color: rgb(223, 48, 48);
+  color: rgb(0, 0, 0);
+  border: 1px solid white;
+}
+
 /*Paleta de colores A*/
 /*Paleta de colores B*/
 /*Paleta de colores C*/
@@ -2504,6 +2521,57 @@
     transform: scale(1);
   }
 }
+.trainer-card {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.trainer-card h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.trainer-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pokemon-list div {
+  text-align: center;
+}
+
+.pokemon-list h4 {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.pokemon-list img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.trainer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /*Paleta de colores A*/
 /*Paleta de colores B*/
 /*Paleta de colores C*/
@@ -4582,6 +4650,23 @@
 .set_btn_grande {
   height: 8vh;
   width: 18vh;
+}
+
+#save-selection {
+  background-color: rgb(157, 9, 9);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#save-selection:hover {
+  background-color: rgb(223, 48, 48);
+  color: rgb(0, 0, 0);
+  border: 1px solid white;
 }
 
 @media screen and (max-width: 1024px) {
@@ -12625,6 +12710,23 @@ header a {
   width: 18vh;
 }
 
+#save-selection {
+  background-color: rgb(157, 9, 9);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#save-selection:hover {
+  background-color: rgb(223, 48, 48);
+  color: rgb(0, 0, 0);
+  border: 1px solid white;
+}
+
 @media screen and (max-width: 1024px) {
   .navbar-responsive {
     font-size: 15px !important;
@@ -14850,6 +14952,94 @@ body .container-F .footer .footer-col .social-links a:hover {
   }
 }
 
+.over {
+  overflow: scroll;
+}
+
 .emoji-cursor {
   cursor: url("/WhatsApp_Image_2024-04-30_at_9.34.35_PM-removebg-preview.png"), auto;
 }/*# sourceMappingURL=Style.css.map */
+
+/*ESTILOS PARA LAS CARD DE STATS; MOVES Y EVO*/
+
+/* Estilos generales para las cartas de información */
+.info_cartas {
+  background-color: #f8f9fa; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  
+  padding: 20px; 
+  font-family: 'Arial', sans-serif; 
+  position: relative; 
+  overflow: hidden; 
+  border: 1px solid #ddd; 
+}
+
+/* Estilos específicos para las evoluciones */
+.Pokedex_Evo {
+  background-color: #e0f7fa; 
+  border-left: 5px solid #00acc1; 
+}
+
+.Pokedex_Evo::before {
+  content: '⚡'; /* Icono de evoluciones */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #00acc1;
+}
+
+/* Estilos específicos para los stats generales */
+.Pokedex_GeneralStats {
+  background-color: #fff3e0; 
+  border-left: 5px solid #ffb74d; 
+}
+
+.Pokedex_GeneralStats::before {
+  content: '📊'; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #ffb74d;
+}
+
+.Pokedex_infoCard {
+  background-color: #e8f5e9; 
+  border-left: 5px solid red; 
+}
+
+/* Estilos específicos para los movimientos */
+.Pokedex_Moves {
+  background-color: #e8f5e9; 
+  border-left: 5px solid #66bb6a; 
+}
+
+.Pokedex_Moves::before {
+  content: '🕺'; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #66bb6a;
+}
+
+/* Tamaño y estilo del texto */
+.txt-weight_md {
+  font-weight: 500; 
+  color: #333; 
+}
+
+/*Diseño borde interior*/
+.info_cartas::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(to right, #ff6f61, #ffb74d, #66bb6a, #00acc1);
+  border-radius: 2px 2px 0 0;
+}

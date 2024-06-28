@@ -1,5 +1,7 @@
 let listaDePokemon = []; // Array para almacenar los Pokémon obtenidos
 let contadorIntentos = 0; // Contador de intentos
+let contadorAciertos = 0; // Contador de aciertos
+let contadorFallos = 0; // Contador de fallos
 const MAX_INTENTOS = 5; // Máximo número de intentos permitidos
 
 // Función para obtener la lista de Pokémon
@@ -77,21 +79,24 @@ function mostrarOpciones(opciones, pokemonCorrecto) {
 // Función para verificar la respuesta
 function verificarRespuesta(pokemonSeleccionado, pokemonCorrecto) {
     contadorIntentos++; // Incrementa el contador de intentos
-    actualizarContadorIntentos(); // Actualiza la visualización del contador
 
     if (pokemonSeleccionado.nombre === pokemonCorrecto.nombre) {
+        contadorAciertos++; // Incrementa el contador de aciertos
         mostrarAlerta('¡Correcto!', 'alerta-correcto');
         revelarPokemon(pokemonCorrecto);
         setTimeout(iniciarJuego, 3000);
     } else {
+        contadorFallos++; // Incrementa el contador de fallos
         mostrarAlerta('Incorrecto, prueba de nuevo.', 'alerta-incorrecto');
         revelarPokemon(pokemonCorrecto);
         setTimeout(iniciarJuego, 1000);
     }
 
+    actualizarContadores(); // Actualiza la visualización de los contadores
+
     if (contadorIntentos >= MAX_INTENTOS) {
-        document.getElementById('contador-intentos').innerText= "No mas intentos, se acabo el juego"
-        setTimeout(resetGame,3000);
+        document.getElementById('contador-intentos').innerText = "No más intentos, se acabó el juego";
+        setTimeout(resetGame, 3000);
     }
 }
 
@@ -105,10 +110,15 @@ function revelarPokemon(pokemon) {
     }, 3000);
 }
 
-// Función para actualizar la visualización del contador de intentos
-function actualizarContadorIntentos() {
-    const contadorElemento = document.getElementById('contador-intentos');
-    contadorElemento.innerText = `Intentos: ${contadorIntentos}`;
+// Función para actualizar la visualización de los contadores
+function actualizarContadores() {
+    const contadorIntentosElemento = document.getElementById('contador-intentos');
+    const contadorAciertosElemento = document.getElementById('contador-aciertos');
+    const contadorFallosElemento = document.getElementById('contador-fallos');
+
+    contadorIntentosElemento.innerText = `Intentos: ${contadorIntentos}`;
+    contadorAciertosElemento.innerText = `Aciertos: ${contadorAciertos}`;
+    contadorFallosElemento.innerText = `Fallos: ${contadorFallos}`;
 }
 
 // Función para mostrar una alerta
@@ -153,13 +163,15 @@ async function iniciarJuego() {
 // Función para reiniciar el juego
 function resetGame() {
     contadorIntentos = 0; // Reinicia el contador de intentos
-    actualizarContadorIntentos(); // Actualiza la visualización del contador
+    contadorAciertos = 0; // Reinicia el contador de aciertos
+    contadorFallos = 0; // Reinicia el contador de fallos
+    actualizarContadores(); // Actualiza la visualización de los contadores
     iniciarJuego(); // Inicia un nuevo juego
 }
 
 // Inicia el juego al cargar la página
 window.onload = function() {
-    actualizarContadorIntentos(); // Actualiza la visualización del contador al cargar la página
+    actualizarContadores(); // Actualiza la visualización de los contadores al cargar la página
     iniciarJuego(); // Inicia el juego automáticamente
 };
 
@@ -168,3 +180,22 @@ const restartButton = document.getElementById('restart');
 restartButton.addEventListener('click', function() {
     resetGame();
 });
+
+// Función para reiniciar el juego
+function resetGame() {
+    // Ocultar la pantalla de fin de juego
+    const gameOverScreen = document.getElementById('game-over');
+    gameOverScreen.style.display = 'none';
+
+    // Reiniciar contadores
+    contadorIntentos = 0;
+    contadorAciertos = 0;
+    contadorFallos = 0;
+
+    // Actualizar la visualización de los contadores
+    actualizarContadores();
+
+    // Mostrar el contenedor del juego
+    document.getElementById('pokedex-container').style.display = 'flex';
+    document.getElementById('pokedex-unfolded').style.display = 'none';
+}

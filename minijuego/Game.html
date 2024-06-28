@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="IMG/favicon.ico" />
-  <link rel="icon" href="IMG/favicon.ico" />
-
-    <link rel="stylesheet" href="Styles2.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMG/favicon.ico">
+    <link rel="stylesheet" href="Styles2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Adivina el Pokémon</title>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <h1>Adivina cuál es el Pokémon</h1>
-      <br />
-      <div
-        id="pokedex-container"
-        class="Pokedex_Screen2"
-        onclick="iniciarJuego()"
-      >
-        <p>Haz clic para empezar el juego</p>
-      </div>
-      <div class="Pokedex_UnFolded" id="pokedex-unfolded">
-        <div id="contador-intentos" class="contador">Intentos: 0</div>
-        <div id="game-container" class="game-container">
-          <img
-            id="pokemon-sombra"
-            class="pokemon-sombra"
-            src=""
-            alt=" "
-          />
+        <h1>Adivina cuál es el Pokémon</h1>
+        <br />
+        <div id="pokedex-container" class="Pokedex_Screen2" onclick="iniciarJuego()">
+            <p>Haz clic para empezar el juego</p>
         </div>
-        <div class="retro">
-          <div id="restart" class="Dot_Verde"></div>
-        <div id="opciones" class="opciones"></div>
+        <div class="Pokedex_UnFolded" id="pokedex-unfolded">
+            <div>
+                <div id="contador-intentos" class="contador">Intentos: 0</div>
+                <div id="contador-aciertos" class="contador">Aciertos: 0</div>
+                <div id="contador-fallos" class="contador">Fallos: 0</div>
+            </div>
+            <div id="game-container" class="game-container">
+                <img id="pokemon-sombra" class="pokemon-sombra" src="" alt=" ">
+            </div>
+            <div class="retro">
+                <div id="restart" class="Dot_Verde"></div>
+                <div id="opciones" class="opciones"></div>
+            </div>
+            <br><br>
+            <div id="alerta" class="alert"></div>
         </div>
-        <br><br>
-        <div id="alerta" class="alert"></div>
-      </div>
+        <div id="game-over" class="game-over" onclick="resetGame()">
+            <div class="game-over-content">
+                <h2>¿Quieres Jugar?</h2>
+                <p>Haz clic aquí</p>
+            </div>
+        </div>
     </div>
 
     <audio id="background-music" loop>
-      <source src="IMG_minigame/audio.m4a" type="audio/mpeg" />
+        <source src="IMG_minigame/audio.m4a" type="audio/mpeg" />
     </audio>
     <script src="pokemons.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
 </html>
