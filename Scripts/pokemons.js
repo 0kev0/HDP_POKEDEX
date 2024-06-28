@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const request = objectStore.put(trainer);
 
         request.onsuccess = function() {
-            alert('Selección de Pokémon guardada localmente en IndexedDB');
+            Swal.fire('Exito!', 'Selección de Pokémon guardada localmente en IndexedDB', 'success');
         };
 
         request.onerror = function(event) {
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const entrenador = prompt('Ingresa el nombre del entrenador:');
         if (entrenador) {
             if (!selectedPokemon) {
-                alert('Debes seleccionar un Pokémon antes de guardar.');
+                Swal.fire('Error', 'Debes seleccionar un Pokémon antes de guardar.', 'error');
                 return;
             }
 
@@ -215,7 +215,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (existingTrainerIndex !== -1) {
                 // Verificar si el entrenador ya tiene 6 Pokémon
                 if (entrenadores[existingTrainerIndex]["Lista Pokemones"].length >= maxSelection) {
-                    alert('El entrenador ya tiene 6 Pokémon seleccionados.');
+                    Swal.fire('Error', 'El entrenador ya tiene 6 Pokémon seleccionados.', 'error');
+
                     return;
                 }
                 // Agregar el Pokémon seleccionado a su lista
@@ -243,7 +244,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const trainerToSave = entrenadores.find(t => t.nombre === entrenador);
             saveTrainerToDB(trainerToSave);
 
-            alert('Selección de Pokémon guardada localmente');
+            Swal.fire('Exito!', 'Selección de Pokémon guardada localmente', 'success');
+
         }
     }
 

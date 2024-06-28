@@ -9,9 +9,17 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.contador{
-    font-size: 16px;
+.contador {
+    font-size: 18px;
+    color: #333;
+    background-color: #ffeb3b;
+    border: 2px solid #fdd835;
+    border-radius: 5px;
+    padding: 10px;
     margin-top: 15px;
+    margin-right: 10px;
+    display: inline-block;
+    width: auto;
 }
 
 .container {
@@ -27,18 +35,18 @@ body {
     background-color: #ff0000;
     border-radius: 50%;
     border: 3px solid #040404;
-  }
-  
-  .Dot_Verde {
+}
+
+.Dot_Verde {
     margin: 10px 0px 0px 10px;
     width: 50px;
     height: 50px;
     background-color: #0820f6;
     border-radius: 50%;
     border: 3px solid #040404;
-  }
-  
-  .Dot_Amarillo {
+}
+
+.Dot_Amarillo {
     margin: 10px 0px 0px 10px;
     width: 20px;
     height: 20px;
@@ -203,4 +211,24 @@ body {
     background-color: #f8d7da;
     color: #721c24;
     border: 2px solid rgb(187, 56, 56);
+}
+
+.game-over {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.game-over-content {
+    text-align: center;
 }
